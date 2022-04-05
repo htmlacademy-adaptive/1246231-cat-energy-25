@@ -1,9 +1,25 @@
 import gulp from 'gulp';
+import browser from 'browser-sync';
+import del from 'del';
+import rename from 'gulp-rename';
+import nunjucks from 'gulp-nunjucks-render'
+import htmlmin from 'gulp-htmlmin';
 import plumber from 'gulp-plumber';
 import sass from 'gulp-dart-sass';
 import postcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
-import browser from 'browser-sync';
+import csso from 'postcss-csso';
+
+//HTML
+
+export const html = () => {
+  return gulp.src('source/templates/pages/*.njk')
+    .pipe(nunjucks({
+      path: ['source/templates']
+    }))
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(gulp.dest('source/'))
+}
 
 // Styles
 
@@ -12,8 +28,10 @@ export const styles = () => {
     .pipe(plumber())
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss([
-      autoprefixer()
+      autoprefixer(),
+      csso()
     ]))
+    .pipe(rename('style.min.css'))
     .pipe(gulp.dest('source/css', { sourcemaps: '.' }))
     .pipe(browser.stream());
 }
@@ -28,6 +46,7 @@ const server = (done) => {
     cors: true,
     notify: false,
     ui: false,
+    browser: "firefox"
   });
   done();
 }
@@ -41,5 +60,5 @@ const watcher = () => {
 
 
 export default gulp.series(
-  styles, server, watcher
+  html, styles, server, watcher
 );
