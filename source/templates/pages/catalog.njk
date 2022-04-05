@@ -1,7 +1,6 @@
 {% extends 'base.njk' %}
 {% set title = 'Кэт энерджи: каталог' %}
-{% set name_main = 'catalog-page' %}
-{% set name_page = 'Каталог продукции' %}
+{% set name_page = 'catalog' %}
 
 {% block content %}
   <section class="catalog-page__catalog">
@@ -10,35 +9,35 @@
 
       <div class="catalog-page__catalog-list">
         {% set product_list = [{
-          'title': 'Cat Energy PRO 500 г',
-          'massa': '500 г',
-          'taste': 'Курица',
-          'price': '700 Р.'
+          'title':  'Cat Energy PRO 500 г',
+          'massa':  '500 г',
+          'taste':  'Курица',
+          'price':  '700 Р.'
         }, {
-          'title': 'Cat Energy PRO 1000 г',
-          'massa': '1000 г',
-          'taste': 'Курица',
-          'price': '1000 Р.'
+          'title':  'Cat Energy PRO 1000 г',
+          'massa':  '1000 г',
+          'taste':  'Курица',
+          'price':  '1000 Р.'
         }, {
-          'title': 'Cat Energy PRO 500 г',
-          'massa': '500 г',
-          'taste': 'Рыба',
-          'price': '700'
+          'title':  'Cat Energy PRO 500 г',
+          'massa':  '500 г',
+          'taste':  'Рыба',
+          'price':  '700'
         }, {
-          'title': 'Cat Energy PRO 1000 г',
-          'massa': '100 г',
-          'taste': 'Рыба',
-          'price': '1000'
+          'title':  'Cat Energy PRO 1000 г',
+          'massa':  '100 г',
+          'taste':  'Рыба',
+          'price':  '1000'
         }, {
-          'title': 'Cat Energy PRO 500 г',
-          'massa': '500 г',
-          'taste': 'Гречка',
-          'price': '400'
+          'title':  'Cat Energy PRO 500 г',
+          'massa':  '500 г',
+          'taste':  'Гречка',
+          'price':  '400'
           }, {
-          'title': 'Cat Energy PRO 1000 г',
-          'massa': '100 г',
-          'taste': 'Гречка',
-          'price': '7000'
+          'title':  'Cat Energy PRO 1000 г',
+          'massa':  '100 г',
+          'taste':  'Гречка',
+          'price':  '7000'
         }] %}
 
         {% for item in product_list %}
@@ -80,21 +79,21 @@
 
       <div class="catalog-page__sub-catalog-list">
         {% set additional_catalog = [{
-          'title':    'Сахарозаменитель',
+          'title':  'Сахарозаменитель',
           'measure':  '1 упаковка (100 г)',
-          'price':    '200 Р.'
+          'price':  '200 Р.'
         }, {
-          'title':    'Питьевая вода',
+          'title':  'Питьевая вода',
           'measure':  '5 литров',
-          'price':    '50 Р.'
+          'price':  '50 Р.'
         }, {
-          'title':    'Молоко',
+          'title':  'Молоко',
           'measure':  '1 литр',
-          'price':    '100 Р.'
+          'price':  '100 Р.'
         }, {
-          'title':    'Витамины',
+          'title':  'Витамины',
           'measure':  '1 упаковка (30 г)',
-          'price':    '300 Р.'
+          'price':  '300 Р.'
         }] %}
 
         {% for item in additional_catalog %}

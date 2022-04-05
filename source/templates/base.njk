@@ -20,13 +20,16 @@
     <ul class="site-navigation">
       {% set nav_links = [{
         'title':  'Главная',
-        'url':    'index.html'
+        'url':  'index.html',
+        'current':  'index'
       }, {
         'title':  'Каталог продукции',
-        'url':    'catalog.html'
+        'url':  'catalog.html',
+        'current':  'catalog'
       }, {
         'title':  'Подбор программы',
-        'url':     'form.html'
+        'url':  'form.html',
+        'current':  'form'
       }] %}
 
       {% for link in nav_links %}
@@ -47,7 +50,7 @@
     </button>
   </header>
 
-  <main class="{{ name_main }}">
+  <main class="main">
 
     {% block content %}{% endblock content %}
 
@@ -77,14 +80,14 @@
 
     <ul class="social-list">
       {% set social_list = [{
-        'svg': 'vk',
-        'url': 'vk.com/htmlacademy'
+        'svg':  'vk',
+        'url':  'vk.com/htmlacademy'
       }, {
-        'svg': 'inst',
-        'url': 'www.instagram.com/htmlacademy/'
+        'svg':  'inst',
+        'url':  'www.instagram.com/htmlacademy/'
       }, {
-        'svg': 'fb',
-        'url': 'www.facebook.com/htmlacademy'
+        'svg':  'fb',
+        'url':  'www.facebook.com/htmlacademy'
       }] %}
 
       {% for link in social_links %}
