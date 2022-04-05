@@ -1,0 +1,121 @@
+{% extends 'base.njk' %}
+{% set title = 'Кэт энерджи: каталог' %}
+{% set name_main = 'catalog-page' %}
+{% set name_page = 'Каталог продукции' %}
+
+{% block content %}
+  <section class="catalog-page__catalog">
+    <div class="container">
+      <h1 class="page-title">Каталог продукции</h1>
+
+      <div class="catalog-page__catalog-list">
+        {% set product_list = [{
+          'title': 'Cat Energy PRO 500 г',
+          'massa': '500 г',
+          'taste': 'Курица',
+          'price': '700 Р.'
+        }, {
+          'title': 'Cat Energy PRO 1000 г',
+          'massa': '1000 г',
+          'taste': 'Курица',
+          'price': '1000 Р.'
+        }, {
+          'title': 'Cat Energy PRO 500 г',
+          'massa': '500 г',
+          'taste': 'Рыба',
+          'price': '700'
+        }, {
+          'title': 'Cat Energy PRO 1000 г',
+          'massa': '100 г',
+          'taste': 'Рыба',
+          'price': '1000'
+        }, {
+          'title': 'Cat Energy PRO 500 г',
+          'massa': '500 г',
+          'taste': 'Гречка',
+          'price': '400'
+          }, {
+          'title': 'Cat Energy PRO 1000 г',
+          'massa': '100 г',
+          'taste': 'Гречка',
+          'price': '7000'
+        }] %}
+
+        {% for item in product_list %}
+          <article class="product-item">
+            <img class="product-item__image" src="" alt="">
+            <h3 class="product-item__title">{{ item.title }}</h3>
+            <dl class="product-item__description">
+              <div class="product-item__description-row">
+                <dt class="product-item__definition">Масса</dt>
+                <dd class="product-item__value">{{ item.massa }}</dd>
+              </div>
+              <div class="product-item__description-row">
+                <dt class="product-item__definition">Вкус</dt>
+                <dd class="product-item__value">{{ item.taste }}</dd>
+              </div>
+              <div class="product-item__description-row">
+                <dt class="product-item__definition">цена</dt>
+                <dd class="product-item__value">{{ item.price }}</dd>
+              </div>
+            </dl>
+            <a class="product-item__button button" href="#">Заказать</a>
+          </article>
+        {% endfor %}
+
+        <div class="product-item product-item--showe-more">
+          <a href="#">
+            <h3 class="product-item__title">Показать еще 100500 товаров</h3>
+            <span>На самом деле вкусов гораздо больше!</span>
+            <span class="product-item__button button--transparent">показать все</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="catalog-page__sub-catalog">
+    <div class="container">
+      <h2 class="page__sub-title">Дополнительные товары</h2>
+
+      <div class="catalog-page__sub-catalog-list">
+        {% set additional_catalog = [{
+          'title':    'Сахарозаменитель',
+          'measure':  '1 упаковка (100 г)',
+          'price':    '200 Р.'
+        }, {
+          'title':    'Питьевая вода',
+          'measure':  '5 литров',
+          'price':    '50 Р.'
+        }, {
+          'title':    'Молоко',
+          'measure':  '1 литр',
+          'price':    '100 Р.'
+        }, {
+          'title':    'Витамины',
+          'measure':  '1 упаковка (30 г)',
+          'price':    '300 Р.'
+        }] %}
+
+        {% for item in additional_catalog %}
+          <article class="additional-item">
+            <h3 class="additional-item__title">{{ item.title }}</h3>
+            <p>
+              <span>{{ item.measure }}</span>
+              <span>{{ item.price }}</span>
+            </p>
+            <a class="additional-item__button button" href="#">Заказать</a>
+          </article>
+        {% endfor %}
+      </div>
+
+      <aside class="catalog-page__aise banner">
+        <p class="banner__text">
+          Закажите все
+          и получите чехол для
+          кота в подарок!
+        </p>
+      </aside>
+    </div>
+  </section>
+{% endblock %}
