@@ -3,9 +3,9 @@
 {% set name_page = 'catalog' %}
 
 {% block content %}
-  <section class="catalog-page__catalog">
+  <section class="catalog">
     <div class="container">
-      <h1 class="page-title">Каталог продукции</h1>
+      <h1 class="page__title">Каталог продукции</h1>
 
       <div class="catalog-page__catalog-list">
         {% set product_list = [{
@@ -54,7 +54,7 @@
                 <dd class="product-item__value">{{ item.taste }}</dd>
               </div>
               <div class="product-item__description-row">
-                <dt class="product-item__definition">цена</dt>
+                <dt class="product-item__definition">Цена</dt>
                 <dd class="product-item__value">{{ item.price }}</dd>
               </div>
             </dl>
@@ -66,18 +66,18 @@
           <a href="#">
             <h3 class="product-item__title">Показать еще 100500 товаров</h3>
             <span>На самом деле вкусов гораздо больше!</span>
-            <span class="product-item__button button--transparent">показать все</span>
+            <span class="product-item__button button--transparent">Показать все</span>
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="catalog-page__sub-catalog">
+  <section class="sub-catalog">
     <div class="container">
       <h2 class="page__sub-title">Дополнительные товары</h2>
 
-      <div class="catalog-page__sub-catalog-list">
+      <div class="sub-catalog__list">
         {% set additional_catalog = [{
           'title':  'Сахарозаменитель',
           'measure':  '1 упаковка (100 г)',
@@ -108,7 +108,7 @@
         {% endfor %}
       </div>
 
-      <aside class="catalog-page__aise banner">
+      <aside class="banner">
         <p class="banner__text">
           Закажите все
           и получите чехол для
