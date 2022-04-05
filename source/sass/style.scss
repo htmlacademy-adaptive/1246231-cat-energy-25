@@ -1,1 +1,11 @@
-// Начните писать стили здесь
+// Mixins
+@import "mixins/media.scss";
+@import "mixins/container.scss";
+// Global
+@import "fonts.scss";
+@import "variables.scss";
+@import "global.scss";
+@import "other.scss";
+// Blocks
+@import "blocks/visually-hidden.scss";
+
