@@ -1,0 +1,36 @@
+.site-navigation {
+  position: fixed;
+  top: 65px;
+  right: 0;
+  left: 0;
+
+  display: none;
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+  text-align: center;
+
+  background-color: var(--white);
+}
+
+// класс для мобильного меню, добавляемый при клике
+.site-navigation--open {
+  display: block;
+}
+
+.site-navigation__item {
+  padding-top: 23px;
+  padding-bottom: 20px;
+
+  border-top: 1px solid  var(--white-2);
+}
+
+.site-navigation__link {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 20px;
+  color: var(--black);
+  text-transform: uppercase;
+  text-decoration: none;
+}
