@@ -1,0 +1,20 @@
+.case__progress-definition {
+  font-size: 12px;
+  line-height: 12px;
+}
+
+.case__progress-value {
+  margin: 0;
+
+  font-size: 24px;
+  line-height: 24px;
+  color: var(--black);
+  text-transform: uppercase;
+}
+
+.case__price {
+  font-weight: 500;
+  line-height: 20px;
+  color: var(--black);
+  text-transform: uppercase;
+}

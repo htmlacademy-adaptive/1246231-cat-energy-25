@@ -1,0 +1,46 @@
+.popular-category__title {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 37px;
+  color: var(--black);
+  text-transform: uppercase;
+}
+
+.popular-category__button {
+  position: relative;
+
+  padding: 0 45px 0 0;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 16px;
+  color: var(--black);
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.popular-category__button:active {
+  opacity: 0.3;
+}
+
+.popular-category__button::before {
+  content: "";
+  position: absolute;
+  top: 26%;
+  right: 8px;
+
+  display: block;
+  width: 24px;
+  height: 12px;
+
+  background-image: url("../img/interface/other/arrow-right@wider.svg");
+  background-position: right;
+}
+
+.popular-category__button:hover::before {
+  right: 0;
+
+  width: 32px;
+
+  transition: all 0.4s ease;
+}
