@@ -1,0 +1,27 @@
+.product-item {
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--black-3);
+}
+
+.product-item--showe-more {
+  text-decoration: none;
+}
+
+.product-item__title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+
+.product-item__image {
+  object-fit: none;
+  object-position: bottom;
+}
+
+.product-item__button {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+}
