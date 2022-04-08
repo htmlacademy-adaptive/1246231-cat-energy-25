@@ -3,133 +3,137 @@
 {% set name_page = 'form' %}
 
 {% block content %}
-  <section>
-    <h1 class="page-title">Подбор программы</h1>
+  <form class="form" action="https://echo.htmlacademy.ru" method="GET">
+    <h1 class="page__title">Подбор программы</h1>
 
-    <form class="form" action="https://echo.htmlacademy.ru" method="GET">
-      <p class="form__lead">
-        Заполните анкету, и мы подберем
-        программу питания для вашего кота
-      </p>
+    <p class="form__lead">
+      Заполните анкету, и мы подберем
+      программу питания для вашего кота
+    </p>
 
-      <fieldset class="form__fieldset">
-        <h2 class="visually-hidden">Личные данные (кота)</h2>
+    <!-- Личные данные кота -->
+    <fieldset class="form__fieldset">
+      <h2 class="visually-hidden">Личные данные (кота)</h2>
 
-        <div class="form__section">
-          {% set cat_info = [{
-            'title':  'Имя:*',
-            'type':  'text',
-            'name':  'name',
-            'value':  'Барсик'
-          }, {
-            'title':  'Вес (кг):*',
-            'type':  'number',
-            'name':  'weight',
-            'value':  '7'
-          }, {
-            'title':  'Возраст (лет):',
-            'type':  'number',
-            'name':  'name',
-            'value':  '7'
-          }] %}
+      <div class="form__section">
+        {% set cat_info = [{
+          'title':  'Имя:*',
+          'type':  'text',
+          'name':  'name',
+          'value':  'Барсик'
+        }, {
+          'title':  'Вес (кг):*',
+          'type':  'number',
+          'name':  'weight',
+          'value':  '7'
+        }, {
+          'title':  'Возраст (лет):',
+          'type':  'number',
+          'name':  'name',
+          'value':  '7'
+        }] %}
 
-          {% for item in cat_info %}
-            <label class="form__label" for="{{ item.name }}-selection">
-              <span class="form__sign">{{ item.title }}</span>
-              <input class="form__input" type="{{ item.type }}" name="{{ item.name }}" id="{{ item.name }}-selection" value="{{ item.value }}">
-            </label>
-          {% endfor %}
-        </div>
-      </fieldset>
-
-      <fieldset class="form__fieldset">
-        <h2 class="visually-hidden">Цель</h2>
-
-        <div class="form__section">
-          {% set tasks = [{
-            'title':  'Похудение',
-            'name':  'lose-weight',
-            'checked':  true
-          }, {
-            'title':  'Набор массы',
-            'name':  'weight-gain'
-          }, {
-            'title':  'Не знаю (Нужен ваш совет)',
-            'name':  'not-know'
-          }] %}
-
-          {% for task in tasks %}
-            <label for="{{ task.name }}-selection">
-              <input class="form__radio" type="radio" name="target" id="{{ task.name }}-selection" value="{{ task.name }}" {{ 'checked' if task.checked }}>
-              <span class="form__sign">{{ task.title }}</span>
-            </label>
-          {% endfor %}
-        </div>
-      </fieldset>
-
-      <fieldset class="form__fieldset">
-        <h2 class="page__sub-title">Контактные данные (владельца кота)</h2>
-
-        <div class="form__section">
-          {% set contacts = [{
-            'title':  'E-mail:*',
-            'type':  'email',
-            'name':  'email',
-            'value':  'кuklachev@gmail.com'
-          }, {
-            'title':  'Телефон:*',
-            'type':  'tel',
-            'name':  'telephone',
-            'value':  '8 (960) 900-60-90'
-          }] %}
-
-          {% for contact in contacts %}
-            <label for="{{ contact.name }}-selection">
-              <span class="form__sign">{{ contact.title }}</span>
-              <input class="form__text" type="{{ contact.type }}" name="{{ contact.name }}" id="{{ contact.name }}-selection" value="{{ contact.value }}">
-            </label>
-          {% endfor %}
-        </div>
-      </fieldset>
-
-      <fieldset class="form__fieldset">
-        <h2 class="page__sub-title">Комментарий</h2>
-
-        <textarea name="" id=""></textarea>
-      </fieldset>
-
-      <fieldset class="form__fieldset">
-        <h2 class="page__sub-title">Дополнительно</h2>
-
-        <div class="form__section">
-          {% set additionals = [{
-            'title':  'Сахарозаменитель',
-            'name':  'sugar',
-            'checked':  true
-          }, {
-            'title':  'Питьевая вода',
-            'name':  'water'
-          }, {
-            'title':  'Молоко',
-            'name':  'milk'
-          }, {
-            'title':  'Витамины',
-            'name':  'vitamins'
-          }] %}
-
-          {% for addition in additionals %}
-            <label for="{{ addition.name }}-selection">
-              <input class="form__checkbox" type="checkbox" name="{{ addition.name }}" id="{{ addition.name }}-selection" {{ 'checked' if addition.checked }}>
-              <span class="form__sign form__sign--accent">{{ addition.title }}</span>
-            </label>
-          {% endfor %}
-        </div>
-      </fieldset>
-
-      <div class="form__footer">
-        <button class="form__button" type="submit">Отправить заявку</button>
-        <span class="form__required">* — Обязательные поля</span>
+        {% for item in cat_info %}
+          <label class="form__label" for="{{ item.name }}-selection">
+            <span class="form__sign">{{ item.title }}</span>
+            <input class="form__text" type="{{ item.type }}" name="{{ item.name }}" id="{{ item.name }}-selection" value="{{ item.value }}">
+          </label>
+        {% endfor %}
       </div>
-    </form>
-  </section>
+    </fieldset>
+
+    <!-- Цель кота -->
+    <fieldset class="form__fieldset form__fieldset--target">
+      <h2 class="visually-hidden">Цель</h2>
+
+      <div class="form__section">
+        {% set tasks = [{
+          'title':  'Похудение',
+          'name':  'lose-weight',
+          'checked':  true
+        }, {
+          'title':  'Набор массы',
+          'name':  'weight-gain'
+        }, {
+          'title':  'Не знаю (Нужен ваш совет)',
+          'name':  'not-know'
+        }] %}
+
+        {% for task in tasks %}
+          <label class="form__label" for="{{ task.name }}-selection">
+            <input class="form__radio" type="radio" name="target" id="{{ task.name }}-selection" value="{{ task.name }}" {{ 'checked' if task.checked }}>
+            <span class="form__sign">{{ task.title }}</span>
+          </label>
+        {% endfor %}
+      </div>
+    </fieldset>
+
+    <!-- Контактные данные владельца -->
+    <fieldset class="form__fieldset">
+      <h2 class="page__sub-title">Контактные данные (владельца кота)</h2>
+
+      <div class="form__section">
+        {% set contacts = [{
+          'title':  'E-mail:*',
+          'type':  'email',
+          'name':  'email',
+          'value':  'кuklachev@gmail.com'
+        }, {
+          'title':  'Телефон:*',
+          'type':  'tel',
+          'name':  'telephone',
+          'value':  '8 (960) 900-60-90'
+        }] %}
+
+        {% for contact in contacts %}
+          <label class="form__label" for="{{ contact.name }}-selection">
+            <span class="form__sign">{{ contact.title }}</span>
+            <input class="form__text" type="{{ contact.type }}" name="{{ contact.name }}" id="{{ contact.name }}-selection" value="{{ contact.value }}">
+          </label>
+        {% endfor %}
+      </div>
+    </fieldset>
+
+    <!-- Комментарий владельца -->
+    <fieldset class="form__fieldset">
+      <h2 class="page__sub-title">Комментарий</h2>
+
+      <textarea name="" id=""></textarea>
+    </fieldset>
+
+    <!-- Дополнительные услуги -->
+    <fieldset class="form__fieldset">
+      <h2 class="page__sub-title">Дополнительно</h2>
+
+      <div class="form__section">
+        {% set additionals = [{
+          'title':  'Сахарозаменитель',
+          'name':  'sugar',
+          'checked':  true
+        }, {
+          'title':  'Питьевая вода',
+          'name':  'water'
+        }, {
+          'title':  'Молоко',
+          'name':  'milk'
+        }, {
+          'title':  'Витамины',
+          'name':  'vitamins'
+        }] %}
+
+        {% for addition in additionals %}
+          <label class="form__label" for="{{ addition.name }}-selection">
+            <input class="form__checkbox" type="checkbox" name="{{ addition.name }}" id="{{ addition.name }}-selection" {{ 'checked' if addition.checked }}>
+            <span class="form__sign form__sign--accent">{{ addition.title }}</span>
+          </label>
+        {% endfor %}
+      </div>
+    </fieldset>
+
+    <!-- Отправка формы -->
+    <div class="form__footer">
+      <button class="form__button" type="submit">Отправить заявку</button>
+      <span class="form__required">* — Обязательные поля</span>
+    </div>
+  </form>
 {% endblock %}

@@ -1,0 +1,40 @@
+.form {
+  color: var(--grey);
+  text-transform: uppercase;
+}
+
+.form__lead {
+  color: var(--black);
+}
+
+.form__fieldset {
+  border: none;
+
+  &--target {
+    color: var(--black-3);
+  }
+}
+
+.form__label {
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.form__input {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  color: inherit;
+  text-transform: inherit;
+}
+
+/* stylelint-disable */
+.form__input::-webkit-outer-spin-button,
+.form__input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.form__input[type="number"] {
+  -moz-appearance: textfield;
+}
+/* stylelint-enable */
