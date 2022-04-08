@@ -1,5 +1,12 @@
 .page__title {
+  font-weight: 500;
   font-size: 36px;
   line-height: 36px;
+  color: var(--black);
+}
+
+.page__sub-title {
+  font-size: 24px;
+  line-height: 24px;
   color: var(--black);
 }

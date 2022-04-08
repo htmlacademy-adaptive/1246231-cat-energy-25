@@ -16,6 +16,8 @@
 
 // класс для мобильного меню, добавляемый при клике
 .site-navigation--open {
+  z-index: 1;
+
   display: block;
 }
 
