@@ -14,3 +14,9 @@
   border: none;
   cursor: pointer;
 }
+
+.button--transparent {
+  color: var(--grey);
+
+  background-color: transparent;
+}
