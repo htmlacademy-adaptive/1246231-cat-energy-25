@@ -1,12 +1,27 @@
 .intro {
   position: relative;
 
+  padding: 26px 0 0 0;
+
   color: var(--white);
+
+  @include media-min(md) {
+    min-height: 874px;
+    padding: 63px 0 0 0;
+  }
+
+  @include media-min(xl) {
+    position: unset;
+
+    min-height: 583px;
+    padding: 109px 0 0 0;
+  }
 }
 
 .intro::before {
   content: "";
   position: absolute;
+  top: 0;
   z-index: -1;
 
   width: 100%;
@@ -16,19 +31,110 @@
   background-image: url("../img/interface/background/index-background-mobile@1x.png");
   background-repeat: no-repeat;
   background-position-x: center;
+
+  @include media-min(md) {
+    content: none;
+  }
+
+  @include media-min(xl) {
+    content: "";
+    right: 0;
+
+    width: 50%;
+    height: 694px;
+
+    background-image: url("../img/interface/background/index-background-desktop@1x.png");
+    background-position-x: right;
+  }
 }
 
 .intro__inner {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  margin: 0;
+
+  text-align: center;
+  color: var(--white);
+
+  @include media-min(md) {
+    align-items: unset;
+    padding: 0 12.5%;
+
+    text-align: unset;
+    color: var(--black);
+  }
+
+  @include media-min(xl) {
+    width: 50%;
+    padding: 0 6.5%;
+  }
 }
 
 .intro__title {
+  max-width: 252px;
+
   font-size: 36px;
   line-height: 36px;
+
+  @include media-min(md) {
+    max-width: 430px;
+
+    font-size: 60px;
+    line-height: 60px;
+  }
 }
 
 .intro__text {
+  margin: 26px 0 0 0;
+
   line-height: 14px;
   text-transform: uppercase;
+
+  @include media-min(md) {
+    margin: 43px 0 0 0;
+
+    font-size: 20px;
+    line-height: 20px;
+  }
+}
+
+.intro__image {
+  margin: 29px 0 0 0;
+
+  @include media-min(md) {
+    position: absolute;
+    left: 50%;
+    z-index: -1;
+
+    width: 709px;
+    height: 609px;
+    margin: 19px 0 0 0;
+
+    transform: translateX(-50%);
+  }
+
+  @include media-min(xl) {
+    top: 122px;
+    left: 58%;
+
+    width: 552px;
+    height: 499px;
+  }
+}
+
+.intro__button {
+  align-self: stretch;
+  margin: 3px 0 0 0;
+  padding: 11px 0;
+
+  @include media-min(md) {
+    max-width: 246px;
+    margin: 48px 0 0 0;
+    padding: 17px 28px;
+  }
+
+  @include media-min(xl) {
+    margin: 51px 0 0 0;
+  }
 }
