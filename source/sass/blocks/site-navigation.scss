@@ -1,24 +1,24 @@
 .site-navigation {
-  position: fixed;
-  top: 65px;
-  right: 0;
-  left: 0;
-
   display: none;
   margin: 0;
   padding: 0;
 
   list-style: none;
-  text-align: center;
-
-  background-color: var(--white);
 }
 
 // класс для мобильного меню, добавляемый при клике
 .site-navigation--open {
+  position: fixed;
+  top: 65px;
+  right: 0;
+  left: 0;
   z-index: 1;
 
   display: block;
+
+  text-align: center;
+
+  background-color: var(--white);
 }
 
 .site-navigation__item {
