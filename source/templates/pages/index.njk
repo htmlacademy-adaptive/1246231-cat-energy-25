@@ -34,16 +34,16 @@
         'title':  'Похудение',
         'desctiption':  'Ваш кот весит больше собаки и почти утратил способность лазить по деревьям?
                         Пора на диету! Cat Energy Slim поможет вашему питомцу сбросить лишний вес.',
-        'alias':  'SLIM'
+        'alias':  'slim'
       }, {
         'title':  'Набор массы',
         'desctiption':  'Заработать авторитет среди дворовых котов и даже собак?
                         Серия Cat Energy Pro поможет вашему коту нарастить необходимые мышцы!',
-        'alias':  'PRO'
+        'alias':  'pro'
       }] %}
 
       {% for category in popular_categories %}
-        <article class="popular-category__item">
+        <article class="popular-category__item popular-category__item--{{ category.alias }}">
           <h3 class="popular-category__title">{{ category.title }}</h3>
           <p class="popular-category__text">{{ category.desctiption }}</p>
           <a class="popular-category__button" href="#">Каталог {{ category.alias }}</a>
