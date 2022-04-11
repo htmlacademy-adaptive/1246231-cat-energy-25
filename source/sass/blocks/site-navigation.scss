@@ -4,6 +4,12 @@
   padding: 0;
 
   list-style: none;
+
+  @include media-min(md) {
+    display: flex;
+
+    column-gap: 16px;
+  }
 }
 
 // класс для мобильного меню, добавляемый при клике
@@ -21,7 +27,7 @@
   background-color: var(--white);
 }
 
-.site-navigation__item {
+.site-navigation--open .site-navigation__item {
   padding-top: 23px;
   padding-bottom: 20px;
 
@@ -35,4 +41,35 @@
   color: var(--black);
   text-transform: uppercase;
   text-decoration: none;
+
+  @include media-min(md) {
+    position: relative;
+
+    display: flex;
+    padding: 10px;
+
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  @include media-min(xl) {
+    font-size: 20px;
+    line-height: 30px;
+    // color: var(--white);
+  }
+
+  &--current::before {
+    @include media-min(md) {
+      content: "";
+      position: absolute;
+      bottom: 0;
+
+      display: block;
+      width: calc(100% - 20px);
+      height: 2px;
+
+      background-color: var(--green);
+    }
+  }
 }

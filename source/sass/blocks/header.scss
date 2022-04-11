@@ -5,6 +5,32 @@
   padding: 10px 0 0 0;
 
   @include container;
+
+  @include media-min(md) {
+    padding-top: 24px;
+  }
+
+  @include media-min(xl) {
+    padding-top: 53px;
+  }
+}
+
+.header__logo-img {
+  @include media-min(md) {
+    width: 174px;
+    height: 52px;
+  }
+
+  @include media-min(xl) {
+    width: 202px;
+    height: 59px;
+  }
+}
+
+.header__site-navigation {
+  @include media-min(md) {
+    margin: 8px -10px 0 0;
+  }
 }
 
 .header__hamburger {
