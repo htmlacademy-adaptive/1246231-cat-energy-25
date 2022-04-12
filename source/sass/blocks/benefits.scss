@@ -1,6 +1,115 @@
+.benefits {
+  font-family: "Arial", sans-serif;
+}
+
 .benefits__list {
+  display: flex;
+  row-gap: 20px;
+  flex-direction: column;
   margin: 0;
   padding: 0;
 
   list-style: none;
+
+  counter-reset: myCounter;
+
+  @include media-min(md) {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    column-gap: 19%;
+
+    row-gap: 83px;
+  }
+
+  @include media-min(xl) {
+    column-gap: 79px;
+  }
+}
+
+.benefits__item {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  max-width: 400px;
+
+  @include media-min(md) {
+    flex-direction: column;
+    align-items: start;
+    max-width: 35.3%;
+    min-height: 227px;
+    padding: 0 0 50px 0;
+  }
+
+  @include media-min(xl) {
+    width: 20.1%;
+  }
+}
+
+.benefits__item::before {
+  content: "";
+
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+
+  background-color: var(--green);
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @include media-min(md) {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.benefits__item--eco::before {
+  background-image: url("../img/interface/other/icon-eco.svg");
+}
+
+.benefits__item--powder::before {
+  background-image: url("../img/interface/other/icon-powder.svg");
+}
+
+.benefits__item--nourishing::before {
+  background-image: url("../img/interface/other/icon-nourishing.svg");
+}
+
+.benefits__item--quick-result::before {
+  background-image: url("../img/interface/other/icon-quick-result.svg");
+}
+
+.benefits__item::after {
+  @include media-min(md) {
+    content: counter(myCounter);
+    position: absolute;
+    top: -13px;
+    right: 0;
+    z-index: -1;
+
+    width: 136px;
+
+    font-size: 280px;
+    line-height: 227px;
+    font-family: "Oswald", "Arial", sans-serif;
+    color: var(--grey-5);
+
+    counter-increment: myCounter;
+  }
+
+  @include media-min(xl) {
+    right: -5px;
+  }
+}
+
+.benefits__text {
+  margin: 0 0 0 19px;
+
+  @include media-min(md) {
+    margin: 32px 0 0 0;
+
+    font-size: 16px;
+    line-height: 24px;
+  }
 }

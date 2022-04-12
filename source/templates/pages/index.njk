@@ -54,7 +54,7 @@
     <section class="benefits">
       <h2 class="page__title">Как это работает</h2>
 
-      <ul class="benefits__list">
+      <ol class="benefits__list">
         {% set benefits = [{
           'desctiption':  'Функциональное питание содержит&nbsp;только полезные питательные вещества.',
           'image':  'eco'
@@ -65,7 +65,7 @@
           'desctiption':  'Замените один-два приема обычной еды на наше функциональное питание.',
           'image':  'nourishing'
           }, {
-          'desctiption':  'Уже через месяц наслаждайтесь изменениями к лучшему вашего питомца!',
+          'desctiption':  'Уже через месяц наслаждайтесь изменениями к лучшему вашего&nbsp;питомца!',
           'image':  'quick-result'
         }] %}
 
@@ -74,7 +74,7 @@
             <p class="benefits__text">{{ benefit.desctiption | safe }}</p>
           </li>
         {% endfor %}
-      </ul>
+      </ol>
     </section>
   </div>
 
