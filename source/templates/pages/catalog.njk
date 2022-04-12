@@ -1,49 +1,60 @@
 {% extends 'base.njk' %}
 {% set title = 'Кэт энерджи: каталог' %}
-{% set name_main = 'catalog-page' %}
-{% set name_page = 'Каталог продукции' %}
+{% set name_page = 'catalog' %}
 
 {% block content %}
-  <section class="catalog-page__catalog">
+  <section class="catalog">
     <div class="container">
-      <h1 class="page-title">Каталог продукции</h1>
+      <h1 class="page__title">Каталог продукции</h1>
 
-      <div class="catalog-page__catalog-list">
+      <div class="catalog__list">
         {% set product_list = [{
-          'title': 'Cat Energy PRO 500 г',
-          'massa': '500 г',
-          'taste': 'Курица',
-          'price': '700 Р.'
+          'title':  'Cat Energy PRO 500 г',
+          'massa':  '500 г',
+          'taste':  'Курица',
+          'price':  '700 Р.',
+          'image':  'chicken-500'
         }, {
-          'title': 'Cat Energy PRO 1000 г',
-          'massa': '1000 г',
-          'taste': 'Курица',
-          'price': '1000 Р.'
+          'title':  'Cat Energy PRO 1000 г',
+          'massa':  '1000 г',
+          'taste':  'Курица',
+          'price':  '1000 Р.',
+          'image':  'chicken-1000'
         }, {
-          'title': 'Cat Energy PRO 500 г',
-          'massa': '500 г',
-          'taste': 'Рыба',
-          'price': '700'
+          'title':  'Cat Energy PRO 500 г',
+          'massa':  '500 г',
+          'taste':  'Рыба',
+          'price':  '700',
+          'image':  'fish-500'
         }, {
-          'title': 'Cat Energy PRO 1000 г',
-          'massa': '100 г',
-          'taste': 'Рыба',
-          'price': '1000'
+          'title':  'Cat Energy PRO 1000 г',
+          'massa':  '100 г',
+          'taste':  'Рыба',
+          'price':  '1000',
+          'image':  'fish-1000'
         }, {
-          'title': 'Cat Energy PRO 500 г',
-          'massa': '500 г',
-          'taste': 'Гречка',
-          'price': '400'
+          'title':  'Cat Energy SLIM 500 г',
+          'massa':  '500 г',
+          'taste':  'Гречка',
+          'price':  '400',
+          'image':  'buckwheat-500'
           }, {
-          'title': 'Cat Energy PRO 1000 г',
-          'massa': '100 г',
-          'taste': 'Гречка',
-          'price': '7000'
+          'title':  'Cat Energy SLIM 1000 г',
+          'massa':  '100 г',
+          'taste':  'Гречка',
+          'price':  '700',
+          'image':  'buckwheat-1000'
+        }, {
+          'title':  'Cat Energy SLIM 500 г',
+          'massa':  '100 г',
+          'taste':  'Рис',
+          'price':  '500',
+          'image':  'rice-500'
         }] %}
 
         {% for item in product_list %}
           <article class="product-item">
-            <img class="product-item__image" src="" alt="">
+            <img class="product-item__image" src="../../img/content/catalog/{{ item.image }}@1x.png" alt="" width="84" height="101">
             <h3 class="product-item__title">{{ item.title }}</h3>
             <dl class="product-item__description">
               <div class="product-item__description-row">
@@ -55,7 +66,7 @@
                 <dd class="product-item__value">{{ item.taste }}</dd>
               </div>
               <div class="product-item__description-row">
-                <dt class="product-item__definition">цена</dt>
+                <dt class="product-item__definition">Цена</dt>
                 <dd class="product-item__value">{{ item.price }}</dd>
               </div>
             </dl>
@@ -63,56 +74,54 @@
           </article>
         {% endfor %}
 
-        <div class="product-item product-item--showe-more">
-          <a href="#">
+        <a class="product-item product-item--showe-more" href="#">
             <h3 class="product-item__title">Показать еще 100500 товаров</h3>
             <span>На самом деле вкусов гораздо больше!</span>
-            <span class="product-item__button button--transparent">показать все</span>
-          </a>
-        </div>
+            <span class="product-item__button button button--transparent">Показать все</span>
+        </a>
       </div>
     </div>
   </section>
 
-  <section class="catalog-page__sub-catalog">
+  <section class="sub-catalog">
     <div class="container">
       <h2 class="page__sub-title">Дополнительные товары</h2>
 
-      <div class="catalog-page__sub-catalog-list">
+      <div class="sub-catalog__list">
         {% set additional_catalog = [{
-          'title':    'Сахарозаменитель',
+          'title':  'Сахарозаменитель',
           'measure':  '1 упаковка (100 г)',
-          'price':    '200 Р.'
+          'price':  '200 Р.'
         }, {
-          'title':    'Питьевая вода',
+          'title':  'Питьевая вода',
           'measure':  '5 литров',
-          'price':    '50 Р.'
+          'price':  '50 Р.'
         }, {
-          'title':    'Молоко',
+          'title':  'Молоко',
           'measure':  '1 литр',
-          'price':    '100 Р.'
+          'price':  '100 Р.'
         }, {
-          'title':    'Витамины',
+          'title':  'Витамины',
           'measure':  '1 упаковка (30 г)',
-          'price':    '300 Р.'
+          'price':  '300 Р.'
         }] %}
 
         {% for item in additional_catalog %}
           <article class="additional-item">
             <h3 class="additional-item__title">{{ item.title }}</h3>
-            <p>
-              <span>{{ item.measure }}</span>
-              <span>{{ item.price }}</span>
-            </p>
+            <dl class="additional-item__description">
+              <dt class="additional-item__definition">{{ item.measure }}</dt>
+              <dd class="additional-item__value">{{ item.price }}</dd>
+            </dl>
             <a class="additional-item__button button" href="#">Заказать</a>
           </article>
         {% endfor %}
       </div>
 
-      <aside class="catalog-page__aise banner">
+      <aside class="banner">
         <p class="banner__text">
           Закажите все
-          и получите чехол для
+          и&nbsp;получите&nbsp;чехол&nbsp;для
           кота в подарок!
         </p>
       </aside>

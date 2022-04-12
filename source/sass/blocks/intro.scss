@@ -1,0 +1,34 @@
+.intro {
+  position: relative;
+
+  color: var(--white);
+}
+
+.intro::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+
+  width: 100%;
+  height: 302px;
+
+  background-color: var(--green-3);
+  background-image: url("../img/interface/background/index-background-mobile@1x.png");
+  background-repeat: no-repeat;
+  background-position-x: center;
+}
+
+.intro__inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.intro__title {
+  font-size: 36px;
+  line-height: 36px;
+}
+
+.intro__text {
+  line-height: 14px;
+  text-transform: uppercase;
+}

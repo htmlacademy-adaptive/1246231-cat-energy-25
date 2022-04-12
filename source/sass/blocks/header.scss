@@ -1,0 +1,73 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  min-height: 65px;
+  padding: 10px 0 0 0;
+
+  @include container;
+}
+
+.header__hamburger {
+  box-sizing: content-box;
+  width: 24px;
+  height: 18px;
+  margin: 4px -8px 0 0;
+  padding: 8px;
+
+  background-color: unset;
+  border: none;
+  cursor: pointer;
+
+  @include media-min(md) {
+    display: none;
+  }
+}
+
+.header__hamburger-inner {
+  position: relative;
+
+  height: 2px;
+
+  background-color: var(--black);
+
+  transition: all 0.3s ease;
+}
+
+// класс для мобильного меню, добавляемый при клике
+.header__hamburger-inner--open {
+  transform: rotate(135deg);
+}
+
+.header__hamburger-inner::before,
+.header__hamburger-inner::after {
+  content: "";
+  position: absolute;
+  left: 0;
+
+  width: 100%;
+  height: inherit;
+
+  background-color: inherit;
+
+  transition: inherit;
+}
+
+.header__hamburger-inner::before {
+  top: -8px;
+}
+
+.header__hamburger-inner::after {
+  top: 8px;
+}
+
+// преобразование 'бурегра' в 'крестик' пои добавление класс при клике на 'бургер'
+.header__hamburger-inner--open::before,
+.header__hamburger-inner--open::after {
+  top: auto;
+
+  transform: rotate(90deg);
+}
+
+.header__hamburger-inner--open::after {
+  transform: rotate(180deg);
+}

@@ -1,0 +1,22 @@
+.button {
+  padding: 7px 0;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  font-family: "Oswald", "Arial", sans-serif;
+  text-align: center;
+  color: var(--white);
+  text-transform: uppercase;
+  text-decoration: none;
+
+  background-color: var(--green);
+  border: none;
+  cursor: pointer;
+}
+
+.button--transparent {
+  color: var(--grey);
+
+  background-color: transparent;
+}

@@ -1,0 +1,31 @@
+// Цвета
+:root {
+  --black: #000000;
+  --black-2: #111111;
+  --black-3: #222222;
+  --grey: #444444;
+  --grey-2: #666666;
+  --grey-3: #cdcdcd;
+  --grey-4: #dcdcdc;
+  --grey-5: #f2f2f2;
+  --white: #ffffff;
+  --white-2: #e6e6e6;
+  --green: #68b738;
+  --green-2: #5eaa2f;
+  --green-3: #65a93c;
+  --orange: #ff8282;
+}
+
+// Ширина экрана
+
+$widths: (
+  sm: 320px,
+  md: 768px,
+  xl: 1440px,
+);
+
+// Отступы
+
+$gap-sm: 20px;
+$gap-md: 30px;
+$gap-xl: 110px;
