@@ -79,50 +79,58 @@
   </div>
 
   <section class="case">
-    <div class="case__inner">
-      <h2 class="page__title">Живой пример</h2>
+    <div class="container">
+      <div class="case__grid">
+        <div class="case__inner">
+          <h2 class="case__title page__title">Живой пример</h2>
 
-      <p class="case__descripriton">
-        Борис сбросил 5 кг за 2 месяца, просто заменив свой обычный корм на Cat Energy Slim.
-        Отличный результат без изнуряющих тренировок!
-        При этом он не менял своих привычек и по-прежнему спит по 16 часов в день.
-      </p>
+          <p class="case__descripriton">
+            Борис сбросил 5 кг за 2 месяца, просто заменив свой обычный корм на Cat Energy Slim.
+            Отличный результат без изнуряющих тренировок!
+            При этом он не менял своих привычек и по&#8209;прежнему спит по 16 часов в день.
+          </p>
 
-      <dl class="case__progress">
-        {% set result = [{
-          'title':  'снижение веса',
-          'value':  '5 кг'
-        }, {
-          'title':  'затрачено времени',
-          'value':  '60 дней'
-        }] %}
+          <dl class="case__progress">
+            {% set result = [{
+              'title':  'снижение веса',
+              'value':  '5 кг'
+            }, {
+              'title':  'затрачено времени',
+              'value':  '60 дней'
+            }] %}
 
-        {% for item in result %}
-          <div class="case__progress-row">
-            <dt class="case__progress-definition">
-              {{ item.title }}
-            </dt>
-            <dd class="case__progress-value">
-              {{ item.value }}
-            </dd>
+            {% for item in result %}
+              <div class="case__progress-row">
+                <dt class="case__progress-definition">
+                  {{ item.title }}
+                </dt>
+                <dd class="case__progress-value">
+                  {{ item.value }}
+                </dd>
+              </div>
+            {% endfor %}
+          </dl>
+
+          <p class="case__price">Затраты на питание: <span>15 000 руб.</span></p>
+        </div>
+
+        <div class="slider">
+          <div class="slider__images">
+            <div class="slider__image-before">
+              <img class="slider__image" src="../../img/content/slider/slide-before-mobile@1x.png" alt="Вид вашего кота до." width="280" height="232">
+            </div>
+            <div class="slider__image-after">
+              <img class="slider__image" src="../../img/content/slider/slide-after-mobile@1x.png" alt="Вид вашего кота после." width="280" height="232">
+            </div>
           </div>
-        {% endfor %}
-      </dl>
 
-      <p class="case__price">Затраты на питание: <span>15 000 руб.</span></p>
-
-      <div class="slider">
-        <img class="slider__image slider__image--before" src="" alt="Вид вашего кота до." width="280" height="232">
-        <img class="slider__image slider__image--after" src="" alt="Вид вашего кота после." width="280" height="232">
-
-        <div class="slider__controls">
-          <span>Было</span>
-
-          <div class="slider__range-bar">
-            <button class="slider__range-buton" type="button"></button>
+          <div class="slider__controls">
+            <span>Было</span>
+            <div class="slider__range-bar">
+              <button class="slider__range-buton" type="button"></button>
+            </div>
+            <span>Стало</span>
           </div>
-
-          <span>Стало</span>
         </div>
       </div>
     </div>

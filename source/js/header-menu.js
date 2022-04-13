@@ -11,4 +11,3 @@ hamburger.onclick = function () {
   mobileMenu.classList.toggle('site-navigation--open');
   bodyOverflow.classList.toggle('show-main-nav');
 };
-

@@ -4,3 +4,55 @@
   color: var(--black);
   text-transform: uppercase;
 }
+
+.slider__images {
+  position: relative;
+
+  width: max-content;
+  height: 232px;
+  margin: 0 auto;
+}
+
+.slider__image-before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+
+  background-color: var(--grey-5);
+}
+
+.slider__controls {
+  display: flex;
+  justify-content: center;
+  margin: 18px 0 0 0;
+
+  column-gap: 7%;
+}
+
+.slider__range-bar {
+  position: relative;
+
+  display: flex;
+  align-self: center;
+  width: 30%;
+  padding: 4px 6px;
+
+  background: var(--white);
+  border: 1px solid var(--grey-3);
+  border-radius: 6px;
+}
+
+.slider__range-buton {
+  width: 50%;
+  height: 6px;
+
+  background: var(--green);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
