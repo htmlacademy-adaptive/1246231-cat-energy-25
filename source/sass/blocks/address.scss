@@ -1,16 +1,78 @@
+.address {
+  position: relative;
+}
+
 .address--background {
   background-color: var(--grey-5);
 }
 
+.address__inner {
+  display: flex;
+  justify-content: space-between;
+  padding: 26px 0;
+
+  @include media-min(md) {
+    padding: 61px 41px 76px 40px;
+  }
+
+  @include media-min(xl) {
+    position: absolute;
+    top: 96px;
+
+    width: 565px;
+    padding: 59px 83px 61px 78px;
+
+    background-color: var(--white);
+  }
+}
+
 .address__title {
-  font-weight: 500;
+  width: min-content;
+  margin: 0;
+
+  font-weight: 400;
   font-size: 16px;
   line-height: 20px;
   color: var(--black-2);
   text-transform: uppercase;
+
+  @include media-min(md) {
+    font-size: 20px;
+    line-height: 26px;
+  }
 }
 
 .address__text {
+  width: min-content;
+
   font-style: unset;
   line-height: 20px;
+  font-family: "Arial", sans-serif;
+
+  @include media-min(md) {
+    font-size: 16px;
+    text-align: end;
+  }
+
+  @include media-min(xl) {
+    text-align: start;
+  }
+}
+
+.address__text-city {
+  @include media-min(md) {
+    display: inline-block;
+    margin-top: 18px;
+  }
+}
+
+.address__map {
+  width: 100%;
+  height: 362px;
+
+  border: none;
+
+  @include media-min(md) {
+    height: 400px;
+  }
 }

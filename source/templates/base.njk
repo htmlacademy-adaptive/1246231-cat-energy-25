@@ -59,22 +59,22 @@
     <section class="address  {{ 'address--background' if  name_page !== 'index' }}">
       <div class="container">
         <div class="address__inner">
-          <h2 class="address__title">Приглашаем к сотрудничеству дилеров!</h2>
+          <h2 class="address__title">
+            Приглашаем
+            к&#160;сотрудничеству
+            дилеров!
+          </h2>
 
           <address class="address__text">
             ул. Большая
-            Конюшенная, д. 19/8
-            Санкт-Петербург
+            Конюшенная,&#160;д.&#160;19/8
+            <span class="address__text-city">Санкт-Петербург</span>
           </address>
         </div>
       </div>
 
       <div class="address__map-wrapper">
-        <picture>
-          <source media="(min-width: 1440px)" srcset="img/interface/map/map-desktop.png">
-          <source media="(min-width: 768px)" srcset="img/interface/map/map-tablet.png">
-          <img src="img/interface/map/map-mobile.png" alt="Мы на карте.">
-        </picture>
+        <iframe class="address__map" src="https://yandex.ru/map-widget/v1/?um=constructor%3A8dbeb7703bacea9fdbb1d24ddc1edc3a51722ed30029556e1ae3a5ff08043578&amp;source=constructor"></iframe>
       </div>
     </section>
   </main>
