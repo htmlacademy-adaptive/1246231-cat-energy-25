@@ -19,7 +19,7 @@
       </picture>
     </a>
 
-    <ul class="site-navigation">
+    <ul class="header__site-navigation site-navigation">
       {% set nav_links = [{
         'title':  'Главная',
         'url':  'index.html',
@@ -80,34 +80,45 @@
   </main>
 
   <footer class="footer">
-    <a class="footer__logo logo" href="#">
-      <img src="img/interface/logo/logo-single.svg" alt="Логотип Кэт Энерджи." width="128" height="24">
-    </a>
-
-    <ul class="social-list">
-      {% set social_list = [{
-        'svg':  'vk',
-        'url':  'vk.com/htmlacademy'
-      }, {
-        'svg':  'inst',
-        'url':  'www.instagram.com/htmlacademy/'
-      }, {
-        'svg':  'fb',
-        'url':  'www.facebook.com/htmlacademy'
-      }] %}
-
-      {% for link in social_links %}
-        <li>
-          <a class="social-list__link" href="https://{{ link.url }}"></a>
-        </li>
-      {% endfor %}
-    </ul>
-
-    <div class="footer__madeby">
-      <a class="footer__madeby-link" href="https://htmlacademy.ru/">
-        <span class="footer__madeby-text">HTML Academy</span>
-        <img class="footer__madeby-logo" src="img/interface/logo/htmlacademy.svg" alt="Логотип HTML Academy." width="27" height="34">
+    <div class="footer__inner container">
+      <a class="footer__logo logo" href="#">
+        <img src="img/interface/logo/logo-single.svg" alt="Логотип Кэт Энерджи." width="128" height="24">
       </a>
+
+      <ul class="footer__social-list social-list">
+        {% set social_links = [{
+          'svg':  'vk',
+          'url':  'vk.com/htmlacademy',
+          'aria': 'Мы в вконтакте.'
+        }, {
+          'svg':  'you',
+          'url':  'www.youtube.com/c/HTMLAcademyRUS/',
+          'aria': 'Мы в ютубе.'
+        }, {
+          'svg':  'tg',
+          'url':  't.me/htmlacademy',
+          'aria': 'Мы в телеграме.'
+        }] %}
+
+        {% for link in social_links %}
+          <li>
+            <a class="social-list__link" href="https://{{ link.url }}" target="_blank">
+              <svg class="social-list__image" aria-label="{{ link.aria }}" width="28" height="22">
+                <use xlink:href="img/sprite.svg#icon-{{ link.svg }}"></use>
+              </svg>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+
+      <div class="footer__madeby">
+        <a class="footer__madeby-link" href="https://htmlacademy.ru/">
+          <span class="footer__madeby-text">HTML Academy</span>
+          <svg class="social-list__image" aria-label="Логотип HTML Academy." width="27" height="34">
+            <use xlink:href="img/sprite.svg#icon-academy"></use>
+          </svg>
+        </a>
+      </div>
     </div>
   </footer>
   <script src="js/header-menu.js"></script>
