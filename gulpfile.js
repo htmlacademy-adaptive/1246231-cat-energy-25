@@ -20,7 +20,7 @@ export const html = () => {
     .pipe(nunjucks({
       path: ['source/templates']
     }))
-    .pipe(htmlmin({ collapseWhitespace: true }))
+    // .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(gulp.dest('source/'))
 }
 
