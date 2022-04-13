@@ -1,8 +1,16 @@
 .page__title {
-  font-weight: 500;
+  margin: 0;
+
+  font-weight: 400;
   font-size: 36px;
   line-height: 36px;
+  font-family: "Oswald", "Arial", sans-serif;
   color: var(--black);
+
+  @include media-min(md) {
+    font-size: 60px;
+    line-height: 60px;
+  }
 }
 
 .page__sub-title {
