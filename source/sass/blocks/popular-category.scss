@@ -1,26 +1,170 @@
+.popular-category {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  row-gap: 20px;
+
+  @include media-min(md) {
+    row-gap: 28px;
+  }
+
+  @include media-min(xl) {
+    flex-direction: row;
+
+    column-gap: 80px;
+
+    row-gap: 40px;
+  }
+}
+
 .popular-category__item {
+  position: relative;
+
+  padding: 28px 7% 19px;
+
   background-color: var(--grey-5);
+
+  @include media-min(md) {
+    padding: 77px 44.5% 57px 52px;
+  }
+
+  @include media-min(xl) {
+    width: 570px;
+    padding: 75px 4.5% 60px 52px;
+  }
+}
+
+.popular-category__item::before {
+  content: "";
+  position: absolute;
+  top: 8%;
+  left: 4%;
+
+  display: block;
+  width: 70px;
+  height: 55px;
+
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.popular-category__item--slim::before {
+  background-image: url("../img/interface/other/cat-back.svg");
+  background-size: 50px 53px;
+
+  @include media-min(md) {
+    top: 82px;
+    right: 62px;
+    left: unset;
+
+    width: 200px;
+    height: 211px;
+
+    background-size: contain;
+  }
+
+  @include media-min(xl) {
+    top: 40px;
+    left: 9%;
+
+    width: 100px;
+    height: 106px;
+  }
+}
+
+.popular-category__item--pro::before {
+  background-image: url("../img/interface/other/cat-muscle.svg");
+  background-size: 67px 50px;
+
+  @include media-min(md) {
+    top: 92px;
+    right: 28px;
+    left: unset;
+
+    width: 268px;
+    height: 200px;
+
+    background-size: contain;
+  }
+
+  @include media-min(xl) {
+    top: 46px;
+    left: 34px;
+
+    width: 134px;
+    height: 100px;
+  }
 }
 
 .popular-category__title {
-  font-weight: 500;
+  margin: 0 0 0 71px;
+
+  font-weight: 400;
   font-size: 24px;
   line-height: 37px;
   color: var(--black);
   text-transform: uppercase;
+
+  @include media-min(md) {
+    margin: 0;
+
+    font-size: 36px;
+    line-height: 36px;
+  }
+
+  @include media-min(xl) {
+    margin: 0 0 0 162px;
+  }
+}
+
+.popular-category__text {
+  margin: 31px 0 0 0;
+  padding: 0 0 23px 0;
+
+  font-family: "Arial", sans-serif;
+
+  border-bottom: 1px solid var(--grey-6);
+
+  @include media-min(md) {
+    margin: 24px 0 0 0;
+
+    font-size: 16px;
+    line-height: 24px;
+
+    border: unset;
+  }
+
+  @include media-min(xl) {
+    margin: 75px 0 0 0;
+  }
 }
 
 .popular-category__button {
   position: relative;
 
-  padding: 0 45px 0 0;
+  display: inline-block;
+  margin: 19px 0 0 0;
+  padding: 0 49px 0 0;
 
-  font-weight: 500;
+  font-weight: 400;
   font-size: 16px;
   line-height: 16px;
   color: var(--black);
   text-transform: uppercase;
   text-decoration: none;
+
+  @include media-min(md) {
+    margin: 30px 0 0 0;
+    padding: 0 57px 0 0;
+
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  @include media-min(xl) {
+    margin: 4px 0 0 0;
+    padding: 0 61px 0 0;
+  }
 }
 
 .popular-category__button:active {
@@ -30,7 +174,7 @@
 .popular-category__button::before {
   content: "";
   position: absolute;
-  top: 26%;
+  top: 15%;
   right: 8px;
 
   display: block;
@@ -39,6 +183,10 @@
 
   background-image: url("../img/interface/other/arrow-right@wider.svg");
   background-position: right;
+
+  @include media-min(md) {
+    top: 28%;
+  }
 }
 
 .popular-category__button:hover::before {

@@ -1,24 +1,167 @@
 .case {
+  font-family: "Oswald", "Arial", sans-serif;
+  letter-spacing: -0.01em;
+
   background: linear-gradient(0deg, var(--grey-5) 100%, var(--white) 100%);
+
+  @include media-min(md) {
+    letter-spacing: normal;
+  }
+
+  @include media-min(xl) {
+    background: linear-gradient(0deg, var(--grey-5) 75%, var(--white) 75%);
+  }
+}
+
+@include media-min(xl) {
+  .case__grid {
+    display: grid;
+
+    grid-template-columns: 35.7% 1fr;
+  }
+}
+
+
+.case__inner {
+  display: grid;
+  align-self: start;
+
+  @include media-min(md) {
+    grid-template-columns: 51.6% 1fr;
+  }
+
+  @include media-min(xl) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.case__title {
+  grid-column: 1/-1;
+}
+
+.case__descripriton {
+  margin: 42px 0 0 0;
+
+  font-family: "Arial", sans-serif;
+
+  grid-column: 1/-1;
+
+  @include media-min(md) {
+    margin: 65px 0 0 0;
+
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  @include media-min(xl) {
+    margin: 147px 0 0 0;
+  }
+}
+
+.case__progress {
+  display: flex;
+  justify-content: space-between;
+  margin: 19px 0 0 0;
+
+  column-gap: 11%;
+
+  @include media-min(md) {
+    margin: 55px 0 0 0;
+
+    column-gap: 12%;
+  }
+
+  @include media-min(xl) {
+    justify-content: start;
+    margin: 70px 0 0 0;
+
+    column-gap: 9%;
+  }
+}
+
+.case__progress-row {
+  position: relative;
+
+  display: flex;
+  flex-grow: 1;
+  flex-basis: 124px;
+  justify-content: center;
+  padding: 14px 0 16px 0;
+
+  border: 1px solid var(--grey-3);
+  border-radius: 3px;
+
+  @include media-min(xl) {
+    flex-grow: 0;
+    flex-basis: 162px;
+  }
 }
 
 .case__progress-definition {
+  position: absolute;
+  bottom: -16px;
+
+  width: min-content;
+  padding: 0 10px;
+
   font-size: 12px;
   line-height: 12px;
+  font-family: "Arial", sans-serif;
+  text-align: center;
+
+  background-color: var(--grey-5);
+
+  @include media-min(md) {
+    bottom: -8px;
+
+    width: max-content;
+
+    font-size: 14px;
+    line-height: 14px;
+  }
 }
 
 .case__progress-value {
+  width: max-content;
   margin: 0;
 
   font-size: 24px;
   line-height: 24px;
   color: var(--black);
   text-transform: uppercase;
+
+  @include media-min(md) {
+    font-size: 30px;
+    line-height: 37px;
+  }
 }
 
 .case__price {
-  font-weight: 500;
+  margin: 36px 0 0 0;
+
+  font-weight: 400;
   line-height: 20px;
+  text-align: center;
   color: var(--black);
   text-transform: uppercase;
+  letter-spacing: 0.01em;
+
+  @include media-min(md) {
+    display: flex;
+    flex-direction: column;
+    margin: 65px 0 0 0;
+
+    font-size: 20px;
+    line-height: 20px;
+    text-align: end;
+
+    row-gap: 9px;
+  }
+
+  @include media-min(xl) {
+    flex-direction: row;
+    margin: 63px 0 0 0;
+
+    column-gap: 61px;
+  }
 }

@@ -9,6 +9,9 @@ import sass from 'gulp-dart-sass';
 import postcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
 import csso from 'postcss-csso';
+import svgo from 'gulp-svgmin';
+import cheerio from 'gulp-cheerio';
+import svgstore from 'gulp-svgstore';
 
 //HTML
 
@@ -17,7 +20,7 @@ export const html = () => {
     .pipe(nunjucks({
       path: ['source/templates']
     }))
-    .pipe(htmlmin({ collapseWhitespace: true }))
+    // .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(gulp.dest('source/'))
 }
 
@@ -34,6 +37,26 @@ export const styles = () => {
     .pipe(rename('style.min.css'))
     .pipe(gulp.dest('source/css', { sourcemaps: '.' }))
     .pipe(browser.stream());
+}
+
+// Spryte
+
+const sprite = () => {
+  return gulp.src('source/img/sprite/**/*.svg')
+    .pipe(svgo())
+    .pipe(cheerio({
+      run: function ($) {
+        $('[fill]').removeAttr('fill');
+        $('[stroke]').removeAttr('stroke');
+        $('[style]').removeAttr('style');
+      },
+      parserOptions: { xmlMode: true }
+    }))
+    .pipe(svgstore({
+      inlineSvg: false
+    }))
+    .pipe(rename('sprite.svg'))
+    .pipe(gulp.dest('source/img'));
 }
 
 // Server

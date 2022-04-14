@@ -4,9 +4,9 @@
 
 {% block content %}
   <section class="intro">
-    <h1 class="visually-hidden">Интернет магазин "Кэт энерджи"</h1>
-
     <div class="container">
+      <h1 class="visually-hidden">Интернет магазин "Кэт энерджи"</h1>
+
       <p class="intro__inner">
         <span class="intro__title">Функциональное питание для котов</span>
 
@@ -18,109 +18,119 @@
           <source type="image/webp" srcset="img/content/other/index-intro-mobile@1x.webp, img/content/other/index-intro-mobile@2x.webp 2x"> -->
           <source media="(min-width: 1440px)" srcset="img/content/other/index-intro-desktop@1x.png">
           <source media="(min-width: 768px)" srcset="img/content/other/index-intro-tablet@1x.jpg">
-          <img src="img/content/other/index-intro-mobile@1x.png" alt="" width="280" height="270">
+          <img class="intro__image" src="img/content/other/index-intro-mobile@1x.png" alt="" width="280" height="270">
         </picture>
 
-        <a class="button" href="#">Подобрать программу</a>
+        <a class="intro__button button" href="#">Подобрать программу</a>
       </p>
     </div>
   </section>
 
-  <section class="popular-category">
-    <h2 class="visually-hidden">Популярные категории</h2>
+  <div class="container">
+    <section class="popular-category">
+      <h2 class="visually-hidden">Популярные категории</h2>
 
-    {% set popular_categories = [{
-      'title':  'Похудение',
-      'desctiption':  'Ваш кот весит больше собаки и почти утратил способность лазить по деревьям?
-                      Пора на диету !Cat Energy Slim поможет вашему питомцу сбросить лишний вес.',
-      'alias':  'SLIM'
-    }, {
-      'title':  'Набор массы',
-      'desctiption':  'Заработать авторитет среди дворовых котов и даже собак?
-                      Серия Cat Energy Pro поможет вашему коту нарастить необходимые мышцы!',
-      'alias':  'PRO'
-    }] %}
-
-    {% for category in popular_categories %}
-      <article class="popular-category__item">
-        <h3 class="popular-category__title">{{ category.title }}</h3>
-        <p class="popular-category__text">{{ category.desctiption }}</p>
-        <a class="popular-category__button" href="#">Каталог {{ category.alias }}</a>
-      </article>
-    {% endfor %}
-  </section>
-
-  <section class="benefits">
-    <h2 class="page__title">Как это работает</h2>
-
-    <ul class="benefits__list">
-      {% set benefits = [{
-        'desctiption':  'Функциональное питание содержит&nbsp;только полезные питательные вещества.',
-        'image':  'eco'
+      {% set popular_categories = [{
+        'title':  'Похудение',
+        'desctiption':  'Ваш кот весит больше собаки и почти утратил способность лазить по деревьям?
+                        Пора на диету! Cat Energy Slim поможет вашему питомцу сбросить лишний вес.',
+        'alias':  'slim'
       }, {
-        'desctiption':  'Выпускается в виде порошка, который нужно лишь залить кипятком и готово.',
-        'image':  'powder'
-      }, {
-        'desctiption':  'Замените один-два приема обычной еды на наше функциональное питание.',
-        'image':  'nourishing'
-        }, {
-        'desctiption':  'Уже через месяц наслаждайтесь изменениями к лучшему вашего питомца!',
-        'image':  'quick-result'
+        'title':  'Набор массы',
+        'desctiption':  'Заработать авторитет среди дворовых котов и даже собак?
+                        Серия Cat Energy Pro поможет вашему коту нарастить необходимые мышцы!',
+        'alias':  'pro'
       }] %}
 
-      {% for benefit in benefits %}
-        <li class="benefits__item benefits__item--{{ benefit.image  }}">
-          <p class="benefits__text">{{ benefit.desctiption | safe }}</p>
-        </li>
+      {% for category in popular_categories %}
+        <article class="popular-category__item popular-category__item--{{ category.alias }}">
+          <h3 class="popular-category__title">{{ category.title }}</h3>
+          <p class="popular-category__text">{{ category.desctiption }}</p>
+          <a class="popular-category__button" href="#">Каталог {{ category.alias }}</a>
+        </article>
       {% endfor %}
-    </ul>
-  </section>
+    </section>
 
-  <section class="case">
-    <div class="case__inner">
-      <h2 class="page__title">Живой пример</h2>
+    <section class="benefits">
+      <h2 class="page__title">Как это работает</h2>
 
-      <p class="case__descripriton">
-        Борис сбросил 5 кг за 2 месяца, просто заменив свой обычный корм на Cat Energy Slim.
-        Отличный результат без изнуряющих тренировок!
-        При этом он не менял своих привычек и по-прежнему спит по 16 часов в день.
-      </p>
-
-      <dl class="case__progress">
-        {% set result = [{
-          'title':  'снижение веса',
-          'value':  '5 кг'
+      <ol class="benefits__list">
+        {% set benefits = [{
+          'desctiption':  'Функциональное питание содержит&nbsp;только полезные питательные вещества.',
+          'image':  'eco'
         }, {
-          'title':  'затрачено времени',
-          'value':  '60 дней'
+          'desctiption':  'Выпускается в виде порошка, который нужно лишь залить кипятком и готово.',
+          'image':  'powder'
+        }, {
+          'desctiption':  'Замените один-два приема обычной еды на наше функциональное питание.',
+          'image':  'nourishing'
+          }, {
+          'desctiption':  'Уже через месяц наслаждайтесь изменениями к лучшему вашего&nbsp;питомца!',
+          'image':  'quick-result'
         }] %}
 
-        {% for item in result %}
-          <div class="case__progress-row">
-            <dt class="case__progress-definition">
-              {{ item.title }}
-            </dt>
-            <dd class="case__progress-value">
-              {{ item.value }}
-            </dd>
-          </div>
+        {% for benefit in benefits %}
+          <li class="benefits__item benefits__item--{{ benefit.image  }}">
+            <p class="benefits__text">{{ benefit.desctiption | safe }}</p>
+          </li>
         {% endfor %}
-      </dl>
+      </ol>
+    </section>
+  </div>
 
-      <p class="case__price">Затраты на питание: <span>15 000 руб.</span></p>
+  <section class="case">
+    <div class="container">
+      <div class="case__grid">
+        <div class="case__inner">
+          <h2 class="case__title page__title">Живой пример</h2>
 
-      <div class="slider">
-        <img class="slider__image slider__image--before" src="" alt="Вид вашего кота до." width="280" height="232">
-        <img class="slider__image slider__image--after" src="" alt="Вид вашего кота после." width="280" height="232">
+          <p class="case__descripriton">
+            Борис сбросил 5 кг за 2 месяца, просто заменив свой обычный корм на Cat Energy Slim.
+            Отличный результат без изнуряющих тренировок!
+            При этом он не менял своих привычек и по&#8209;прежнему спит по 16 часов в день.
+          </p>
 
-        <div class="slider__controls">
-          <span>Было</span>
+          <dl class="case__progress">
+            {% set result = [{
+              'title':  'снижение веса',
+              'value':  '5 кг'
+            }, {
+              'title':  'затрачено времени',
+              'value':  '60 дней'
+            }] %}
 
-          <div class="slider__range-bar">
-            <button class="slider__range-buton" type="button"></button>
+            {% for item in result %}
+              <div class="case__progress-row">
+                <dt class="case__progress-definition">
+                  {{ item.title }}
+                </dt>
+                <dd class="case__progress-value">
+                  {{ item.value }}
+                </dd>
+              </div>
+            {% endfor %}
+          </dl>
+
+          <p class="case__price">Затраты на питание: <span>15 000 руб.</span></p>
+        </div>
+
+        <div class="slider">
+          <div class="slider__images">
+            <div class="slider__image-before">
+              <img class="slider__image" src="../../img/content/slider/slide-before-mobile@1x.png" alt="Вид вашего кота до." width="280" height="232">
+            </div>
+            <div class="slider__image-after">
+              <img class="slider__image" src="../../img/content/slider/slide-after-mobile@1x.png" alt="Вид вашего кота после." width="280" height="232">
+            </div>
           </div>
 
-          <span>Стало</span>
+          <div class="slider__controls">
+            <span>Было</span>
+            <div class="slider__range-bar">
+              <button class="slider__range-buton" type="button"></button>
+            </div>
+            <span>Стало</span>
+          </div>
         </div>
       </div>
     </div>

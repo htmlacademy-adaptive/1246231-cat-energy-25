@@ -6,9 +6,8 @@ const mobileMenu = document.querySelector('.site-navigation')
 
 const bodyOverflow = document.querySelector('body')
 
-hamburger.onclick = function () {
+hamburger.addEventListener('click', () => {
   toggle.classList.toggle('header__hamburger-inner--open');
   mobileMenu.classList.toggle('site-navigation--open');
   bodyOverflow.classList.toggle('show-main-nav');
-};
-
+});
