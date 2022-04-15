@@ -1,0 +1,24 @@
+@mixin title {
+  margin: 0;
+
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 1;
+  font-family: "Oswald", "Arial", sans-serif;
+  color: var(--black);
+
+  @include media-min(md) {
+    font-size: 60px;
+  }
+}
+
+@mixin sub-title {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1;
+  color: var(--black);
+
+  @include media-min(md) {
+    font-size: 36px;
+  }
+}
