@@ -3,31 +3,31 @@
 {% set name_page = 'form' %}
 
 {% block content %}
-  <form class="form" action="https://echo.htmlacademy.ru" method="GET">
-    <h1 class="page__title">Подбор программы</h1>
+  <div class="container">
+    <form class="form" action="https://echo.htmlacademy.ru" method="GET">
+      <h1 class="form__title">Подбор программы</h1>
 
-    <p class="form__lead">
-      Заполните анкету, и мы подберем
-      программу питания для вашего кота
-    </p>
+      <p class="form__lead">
+        Заполните анкету, и мы подберем
+        программу питания для вашего кота
+      </p>
 
-    <!-- Личные данные кота -->
-    <fieldset class="form__fieldset">
-      <h2 class="visually-hidden">Личные данные (кота)</h2>
+      <!-- Личные данные кота -->
+      <fieldset class="form__fieldset form__fieldset--cats">
+        <h2 class="visually-hidden">Личные данные (кота)</h2>
 
-      <div class="form__section">
         {% set cat_info = [{
           'title':  'Имя:*',
           'type':  'text',
           'name':  'name',
           'value':  'Барсик'
         }, {
-          'title':  'Вес (кг):*',
+          'title':  'Вес&nbsp;(кг):*',
           'type':  'number',
           'name':  'weight',
           'value':  '7'
         }, {
-          'title':  'Возраст (лет):',
+          'title':  'Возраст&nbsp;(лет):',
           'type':  'number',
           'name':  'name',
           'value':  '7'
@@ -35,18 +35,16 @@
 
         {% for item in cat_info %}
           <label class="form__label" for="{{ item.name }}-selection">
-            <span class="form__sign">{{ item.title }}</span>
+            <span class="form__sign">{{ item.title | safe }}</span>
             <input class="form__text" type="{{ item.type }}" name="{{ item.name }}" id="{{ item.name }}-selection" value="{{ item.value }}">
           </label>
         {% endfor %}
-      </div>
-    </fieldset>
+      </fieldset>
 
-    <!-- Цель кота -->
-    <fieldset class="form__fieldset form__fieldset--target">
-      <h2 class="visually-hidden">Цель</h2>
+      <!-- Цель кота -->
+      <fieldset class="form__fieldset form__fieldset--target">
+        <h2 class="visually-hidden">Цель</h2>
 
-      <div class="form__section">
         {% set tasks = [{
           'title':  'Похудение',
           'name':  'lose-weight',
@@ -65,14 +63,12 @@
             <span class="form__sign">{{ task.title }}</span>
           </label>
         {% endfor %}
-      </div>
-    </fieldset>
+      </fieldset>
 
-    <!-- Контактные данные владельца -->
-    <fieldset class="form__fieldset">
-      <h2 class="page__sub-title">Контактные данные (владельца кота)</h2>
+      <!-- Контактные данные владельца -->
+      <fieldset class="form__fieldset form__fieldset--user">
+        <h2 class="form__sub-title">Контактные данные (владельца кота)</h2>
 
-      <div class="form__section">
         {% set contacts = [{
           'title':  'E-mail:*',
           'type':  'email',
@@ -91,21 +87,19 @@
             <input class="form__text" type="{{ contact.type }}" name="{{ contact.name }}" id="{{ contact.name }}-selection" value="{{ contact.value }}">
           </label>
         {% endfor %}
-      </div>
-    </fieldset>
+      </fieldset>
 
-    <!-- Комментарий владельца -->
-    <fieldset class="form__fieldset">
-      <h2 class="page__sub-title">Комментарий</h2>
+      <!-- Комментарий владельца -->
+      <fieldset class="form__fieldset">
+        <h2 class="form__sub-title">Комментарий</h2>
 
-      <textarea name="" id=""></textarea>
-    </fieldset>
+        <textarea class="form__textarea" name="" id="">Расскажите обо всех повадкха кота</textarea>
+      </fieldset>
 
-    <!-- Дополнительные услуги -->
-    <fieldset class="form__fieldset">
-      <h2 class="page__sub-title">Дополнительно</h2>
+      <!-- Дополнительные услуги -->
+      <fieldset class="form__fieldset form__fieldset--additional">
+        <h2 class="form__sub-title">Дополнительно</h2>
 
-      <div class="form__section">
         {% set additionals = [{
           'title':  'Сахарозаменитель',
           'name':  'sugar',
@@ -124,16 +118,16 @@
         {% for addition in additionals %}
           <label class="form__label" for="{{ addition.name }}-selection">
             <input class="form__checkbox" type="checkbox" name="{{ addition.name }}" id="{{ addition.name }}-selection" {{ 'checked' if addition.checked }}>
-            <span class="form__sign form__sign--accent">{{ addition.title }}</span>
+            <span class="form__sign">{{ addition.title }}</span>
           </label>
         {% endfor %}
-      </div>
-    </fieldset>
+      </fieldset>
 
-    <!-- Отправка формы -->
-    <div class="form__footer">
-      <button class="form__button" type="submit">Отправить заявку</button>
-      <span class="form__required">* — Обязательные поля</span>
-    </div>
-  </form>
+      <!-- Отправка формы -->
+      <div class="form__footer">
+        <button class="form__button button" type="submit">Отправить заявку</button>
+        <span class="form__required">* — Обязательные поля</span>
+      </div>
+    </form>
+  </div>
 {% endblock %}

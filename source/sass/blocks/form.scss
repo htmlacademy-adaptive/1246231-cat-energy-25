@@ -1,40 +1,224 @@
 .form {
+  display: grid;
+
+  font-size: 16px;
+  line-height: 18px;
   color: var(--grey);
-  text-transform: uppercase;
+
+  @include media-min(md) {
+    padding: 0 40px;
+
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  @include media-min(xl) {
+    display: grid;
+    padding: 0;
+
+    column-gap: 6.2%;
+
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.form__title {
+  @include title;
+}
+
+.form__sub-title {
+  grid-column: 1/-1;
+
+  @include sub-title;
 }
 
 .form__lead {
+  padding-right: 18%;
+
+  font-size: 14px;
   color: var(--black);
+  text-transform: uppercase;
+
+  @include media-min(md) {
+    font-size: 20px;
+  }
+
+  @include media-min(xl) {
+    grid-column: 1/2;
+  }
 }
 
 .form__fieldset {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  row-gap: 13px;
+  text-transform: uppercase;
+
   border: none;
 
-  &--target {
-    color: var(--black-3);
+  @include media-min(md) {
+    row-gap: 20px;
+  }
+
+  @include media-min(xl) {
+    grid-column: 1/-1;
+  }
+}
+
+.form__fieldset--cats {
+  @include media-min(xl) {
+    grid-column: 1/2;
+  }
+}
+
+.form__fieldset--target {
+  color: var(--black-3);
+
+  @include media-min(md) {
+    border: 1px solid var(--grey-8);
+    row-gap: 13px;
+    padding: 24px 30px;
+  }
+
+  @include media-min(xl) {
+    grid-column: 2/3;
+  }
+}
+
+.form__fieldset--user {
+  @include media-min(xl) {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 6%;
+  }
+}
+
+.form__fieldset--additional {
+  color: var(--black);
+
+  @include media-min(md) {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 9.5%;
+    row-gap: 30px;
+  }
+
+  @include media-min(xl) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 6.5%;
   }
 }
 
 .form__label {
-  font-size: 16px;
-  line-height: 18px;
+  display: grid;
+  align-items: center;
+
+  column-gap: 5%;
+
+  grid-template-columns: max-content 1fr;
+
+  @include media-min(md) {
+    column-gap: 20px;
+  }
 }
 
-.form__input {
+.form__text {
+  flex-grow: 1;
+  padding: 10px 15px;
+
   font-weight: 400;
-  font-size: 16px;
-  line-height: 18px;
+  font-size: inherit;
+  line-height: inherit;
+  font-family: inherit;
   color: inherit;
   text-transform: inherit;
+
+  border: 1px solid var(--grey-8);
+}
+
+.form__radio {
+  width: 30px;
+  height: 30px;
+  margin: 0;
+
+  @include media-min(md) {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.form__checkbox {
+  width: 30px;
+  height: 30px;
+  margin: 0;
+
+  border: 1px solid var(--grey-3);
+
+  appearance: none;
+
+  @include media-min(md) {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.form__textarea {
+  width: 100%;
+  min-height: 150px;
+  padding: 7px 12px;
+
+  font-size: inherit;
+  line-height: inherit;
+  font-family: inherit;
+  color: inherit;
+  text-transform: inherit;
+
+  border: 1px solid var(--grey-8);
+
+  resize: unset;
+
+  @include media-min(md) {
+    min-height: 173px;
+    padding: 7px 19px;
+  }
 }
 
 /* stylelint-disable */
-.form__input::-webkit-outer-spin-button,
-.form__input::-webkit-inner-spin-button {
+.form__text::-webkit-outer-spin-button,
+.form__text::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 
-.form__input[type="number"] {
+.form__text[type="number"] {
   -moz-appearance: textfield;
 }
 /* stylelint-enable */
+
+.form__footer {
+  display: grid;
+
+  @include media-min(md) {
+    grid-template-columns: 45% max-content;
+  }
+
+  @include media-min(xl) {
+    grid-column: 1/2;
+    grid-template-columns: 46.5% max-content;
+  }
+}
+
+.form__required {
+  font-size: 14px;
+  line-height: 16px;
+  font-family: "Arial", sans-serif;
+  justify-self: center;
+
+  @include media-min(md) {
+    margin-left: 62px;
+
+    font-size: 16px;
+  }
+
+  @include media-min(md) {
+    margin-left: 83px;
+  }
+}
