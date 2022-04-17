@@ -1,0 +1,21 @@
+.sub-catalog {
+  @include media-min(xl) {
+    display: grid;
+    justify-content: space-between;
+    align-items: center;
+
+    grid-template-columns: 73.2% 20.1%;
+  }
+}
+
+.sub-catalog__list {
+  @include media-min(xl) {
+    grid-row: 2/3;
+  }
+}
+
+.sub-catalog__banner {
+  @include media-min(xl) {
+    grid-row: 2/3;
+  }
+}

@@ -3,49 +3,49 @@
 {% set name_page = 'catalog' %}
 
 {% block content %}
-  <section class="catalog">
-    <div class="container">
+  <div class="container">
+    <section class="catalog">
       <h1 class="page__title">Каталог продукции</h1>
 
       <div class="catalog__list">
         {% set product_list = [{
-          'title':  'Cat Energy PRO 500 г',
+          'title':  'Cat Energy PRO 500&nbsp;г',
           'massa':  '500 г',
           'taste':  'Курица',
           'price':  '700 Р.',
           'image':  'chicken-500'
         }, {
-          'title':  'Cat Energy PRO 1000 г',
+          'title':  'Cat Energy PRO 1000&nbsp;г',
           'massa':  '1000 г',
           'taste':  'Курица',
           'price':  '1000 Р.',
           'image':  'chicken-1000'
         }, {
-          'title':  'Cat Energy PRO 500 г',
+          'title':  'Cat Energy PRO 500&nbsp;г',
           'massa':  '500 г',
           'taste':  'Рыба',
           'price':  '700',
           'image':  'fish-500'
         }, {
-          'title':  'Cat Energy PRO 1000 г',
+          'title':  'Cat Energy PRO 1000&nbsp;г',
           'massa':  '100 г',
           'taste':  'Рыба',
           'price':  '1000',
           'image':  'fish-1000'
         }, {
-          'title':  'Cat Energy SLIM 500 г',
+          'title':  'Cat Energy SLIM 500&nbsp;г',
           'massa':  '500 г',
           'taste':  'Гречка',
           'price':  '400',
           'image':  'buckwheat-500'
           }, {
-          'title':  'Cat Energy SLIM 1000 г',
+          'title':  'Cat Energy SLIM 1000&nbsp;г',
           'massa':  '100 г',
           'taste':  'Гречка',
           'price':  '700',
           'image':  'buckwheat-1000'
         }, {
-          'title':  'Cat Energy SLIM 500 г',
+          'title':  'Cat Energy SLIM 500&nbsp;г',
           'massa':  '100 г',
           'taste':  'Рис',
           'price':  '500',
@@ -55,7 +55,7 @@
         {% for item in product_list %}
           <article class="product-item">
             <img class="product-item__image" src="img/content/catalog/{{ item.image }}@1x.png" alt="" width="84" height="101">
-            <h3 class="product-item__title">{{ item.title }}</h3>
+            <h3 class="product-item__title">{{ item.title | safe }}</h3>
             <dl class="product-item__description">
               <div class="product-item__description-row">
                 <dt class="product-item__definition">Масса</dt>
@@ -74,17 +74,15 @@
           </article>
         {% endfor %}
 
-        <a class="product-item product-item--showe-more" href="#">
-            <h3 class="product-item__title">Показать еще 100500 товаров</h3>
-            <span>На самом деле вкусов гораздо больше!</span>
-            <span class="product-item__button button button--transparent">Показать все</span>
+        <a class="product-item product-item--more" href="#">
+          <h3 class="product-item__title">Показать еще 100500 товаров</h3>
+          <span class="product-item__more-text">На самом деле вкусов гораздо больше!</span>
+          <span class="product-item__button product-item__button--more button">Показать все</span>
         </a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="sub-catalog">
-    <div class="container">
+    <section class="sub-catalog">
       <h2 class="page__sub-title">Дополнительные товары</h2>
 
       <div class="sub-catalog__list">
@@ -118,13 +116,13 @@
         {% endfor %}
       </div>
 
-      <aside class="banner">
+      <aside class="sub-catalog__banner banner">
         <p class="banner__text">
           Закажите все
           и&nbsp;получите&nbsp;чехол&nbsp;для
           кота в подарок!
         </p>
       </aside>
-    </div>
-  </section>
+    </section>
+  </div>
 {% endblock %}

@@ -1,6 +1,7 @@
 // Mixins
 @import "mixins/media.scss";
 @import "mixins/container.scss";
+@import "mixins/titles.scss";
 // Global
 @import "fonts.scss";
 @import "variables.scss";
@@ -22,6 +23,8 @@
 @import "blocks/case.scss";
 @import "blocks/slider.scss";
 @import "blocks/address.scss";
+@import "blocks/catalog.scss";
+@import "blocks/sub-catalog.scss";
 @import "blocks/product-item.scss";
 @import "blocks/additional-item.scss";
 @import "blocks/banner.scss";

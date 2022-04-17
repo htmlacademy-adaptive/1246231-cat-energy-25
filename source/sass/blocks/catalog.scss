@@ -1,0 +1,16 @@
+.catalog__list {
+  display: grid;
+  row-gap: 44px;
+
+  @include media-min(md) {
+    column-gap: 9%;
+
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include media-min(xl) {
+    column-gap: 6.5%;
+
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
