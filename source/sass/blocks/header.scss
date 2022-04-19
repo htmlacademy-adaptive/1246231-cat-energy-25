@@ -15,6 +15,13 @@
   }
 }
 
+// класс для мобильного меню, перестраивающий сетку, если нет JS, удаляется им же если он есть
+.header--no-js {
+  @include media-max(md) {
+    flex-direction: column;
+  }
+}
+
 .header__logo-img {
   @include media-min(md) {
     width: 174px;
@@ -47,6 +54,11 @@
   @include media-min(md) {
     display: none;
   }
+}
+
+// класс для мобильного меню, скрывающий тоглер, если нет JS, удаляется им же если он есть
+.header__hamburger--no-js {
+  display: none;
 }
 
 .header__hamburger-inner {

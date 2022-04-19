@@ -27,11 +27,46 @@
   background-color: var(--white);
 }
 
-.site-navigation--open .site-navigation__item {
-  padding-top: 23px;
-  padding-bottom: 20px;
+// класс для мобильного меню, показывающий меню, если нет JS, удаляется им же если он есть
+.site-navigation--no-js {
+  @include media-max(md) {
+    display: block;
+    margin-top: 16px;
 
-  border-top: 1px solid  var(--white-2);
+    text-align: center;
+  }
+}
+
+// стили используемые только в мобильной версии
+.site-navigation--open .site-navigation__item,
+.site-navigation--no-js .site-navigation__item {
+  @include media-max(md) {
+    position: relative;
+
+    padding-top: 23px;
+    padding-bottom: 20px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 6px;
+      right: 0;
+
+      display: block;
+      width: 200vw;
+      height: 1px;
+
+      background-color: var(--white-2);
+      transform: translateX(50%);
+    }
+  }
+}
+
+// В отличие от всех страниц, на главной странице при десктопе цвет меню белый
+@include media-min(xl) {
+  .site-navigation--index .site-navigation__link {
+    color: var(--white);
+  }
 }
 
 .site-navigation__link {
@@ -56,7 +91,6 @@
   @include media-min(xl) {
     font-size: 20px;
     line-height: 30px;
-    color: var(--white);
   }
 }
 
@@ -83,7 +117,12 @@
 
   @include media-min(xl) {
     bottom: 4px;
+  }
+}
 
+// Current для главной страницы
+@include media-min(xl) {
+  .site-navigation--index .site-navigation__link--current::before {
     background-color: var(--white);
   }
 }
