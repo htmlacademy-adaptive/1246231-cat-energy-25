@@ -9,7 +9,9 @@
   }
 
   @include media-min(xl) {
-    background: linear-gradient(0deg, var(--grey-5) 75%, var(--white) 75%);
+    padding-bottom: 66px;
+
+    background: linear-gradient(0deg, var(--grey-5) 71%, var(--white) 71%);
   }
 }
 
@@ -17,17 +19,18 @@
   .case__grid {
     display: grid;
 
-    grid-template-columns: 35.7% 1fr;
+    column-gap: 6.5%;
+
+    grid-template-columns: repeat(2, 1fr);
   }
 }
-
 
 .case__inner {
   display: grid;
   align-self: start;
 
   @include media-min(md) {
-    grid-template-columns: 51.6% 1fr;
+    grid-template-columns: 1.2fr 1fr;
   }
 
   @include media-min(xl) {
@@ -40,21 +43,22 @@
 }
 
 .case__descripriton {
-  margin: 42px 0 0 0;
+  margin-top: 42px;
 
   font-family: "Arial", sans-serif;
 
   grid-column: 1/-1;
 
   @include media-min(md) {
-    margin: 65px 0 0 0;
+    margin-top: 15px;
 
     font-size: 16px;
     line-height: 24px;
   }
 
   @include media-min(xl) {
-    margin: 147px 0 0 0;
+    margin-top: 97px;
+    padding-right: 135px;
   }
 }
 
@@ -66,16 +70,16 @@
   column-gap: 11%;
 
   @include media-min(md) {
-    margin: 55px 0 0 0;
-
+    margin-top: 38px;
+    margin-right: 21px;
     column-gap: 12%;
   }
 
   @include media-min(xl) {
     justify-content: start;
-    margin: 70px 0 0 0;
-
-    column-gap: 9%;
+    margin-top: 53px;
+    margin-right: 0;
+    column-gap: 7%;
   }
 }
 
@@ -149,7 +153,7 @@
   @include media-min(md) {
     display: flex;
     flex-direction: column;
-    margin: 65px 0 0 0;
+    margin-top: 50px;
 
     font-size: 20px;
     line-height: 20px;
@@ -160,7 +164,7 @@
 
   @include media-min(xl) {
     flex-direction: row;
-    margin: 63px 0 0 0;
+    margin-top: 63px;
 
     column-gap: 61px;
   }
