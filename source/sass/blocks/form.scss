@@ -1,60 +1,81 @@
 .form {
   display: grid;
+  padding-bottom: 33px;
 
   font-size: 16px;
   line-height: 18px;
   color: var(--grey);
+  text-transform: uppercase;
 
   @include media-min(md) {
-    padding: 0 40px;
+    padding: 0 40px 69px;
 
     font-size: 20px;
     line-height: 30px;
   }
 
   @include media-min(xl) {
-    display: grid;
-    padding: 0;
+    padding: 0 0 81px;
 
-    column-gap: 6.2%;
+    column-gap: 6.5%;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 .form__title {
   @include title;
+
+  margin-top: 36px;
+
+  text-transform: initial;
+
+  grid-column: 1/-1;
+
+  @include media-min(md) {
+    margin-top: 80px;
+  }
+
+  @include media-min(md) {
+    margin-top: 67px;
+  }
 }
 
 .form__sub-title {
-  grid-column: 1/-1;
-
   @include sub-title;
+
+  text-transform: initial;
+
+  grid-column: 1/-1;
 }
 
 .form__lead {
+  margin-top: 22px;
   padding-right: 18%;
 
   font-size: 14px;
   color: var(--black);
-  text-transform: uppercase;
 
   @include media-min(md) {
+    margin-top: 29px;
+    padding-right: 45%;
+
     font-size: 20px;
   }
 
   @include media-min(xl) {
+    margin-top: 9px;
+    padding-right: 33%;
+
     grid-column: 1/2;
   }
 }
 
 .form__fieldset {
+  display: grid;
   margin: 0;
   padding: 0;
-  display: grid;
   row-gap: 13px;
-  text-transform: uppercase;
-
   border: none;
 
   @include media-min(md) {
@@ -67,54 +88,93 @@
 }
 
 .form__fieldset--cats {
+  margin-top: 26px;
+
+  @include media-min(md) {
+    margin-top: 45px;
+
+    row-gap: 20px;
+  }
+
   @include media-min(xl) {
     grid-column: 1/2;
   }
 }
 
 .form__fieldset--target {
+  margin-top: 46px;
+
   color: var(--black-3);
 
   @include media-min(md) {
+    margin-top: 73px;
+    padding: 24px 28px;
+
     border: 1px solid var(--grey-8);
+
     row-gap: 13px;
-    padding: 24px 30px;
   }
 
   @include media-min(xl) {
+    margin-top: 45px;
+
     grid-column: 2/3;
   }
 }
 
 .form__fieldset--user {
+  margin-top: 27px;
+
+  @include media-min(md) {
+    margin-top: 46px;
+  }
+
   @include media-min(xl) {
-    grid-template-columns: 1fr 1fr;
+    margin-top: 40px;
+
     column-gap: 6%;
+
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.form__fieldset--review {
+  margin-top: 7px;
+
+  @include media-min(md) {
+    margin-top: 40px;
   }
 }
 
 .form__fieldset--additional {
+  margin-top: 3px;
   color: var(--black);
 
   @include media-min(md) {
-    grid-template-columns: 1fr 1fr;
+    margin-top: 36px;
+
     column-gap: 9.5%;
+
+    grid-template-columns: repeat(2, 1fr);
     row-gap: 30px;
   }
 
   @include media-min(xl) {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-top: 36px;
+
     column-gap: 6.5%;
+
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
 .form__label {
-  display: grid;
+  position: relative;
+
+  display: flex;
   align-items: center;
 
   column-gap: 5%;
-
-  grid-template-columns: max-content 1fr;
 
   @include media-min(md) {
     column-gap: 20px;
@@ -123,6 +183,7 @@
 
 .form__text {
   flex-grow: 1;
+  width: 100px;
   padding: 10px 15px;
 
   font-weight: 400;
@@ -133,6 +194,45 @@
   text-transform: inherit;
 
   border: 1px solid var(--grey-8);
+
+  &:hover {
+    border-color: var(--grey-3);
+  }
+
+  &:focus {
+    outline: 2px solid var(--grey);
+    outline-offset: -1px;
+  }
+
+  &:invalid {
+    outline-color: var(--orange);
+  }
+}
+
+.form__input-icon {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+
+  &--email {
+    right: 20px;
+    mask: url("../img/interface/other/icon-email.svg") no-repeat center;
+    background-color: var(--black-3);
+  }
+
+  &--tel {
+    right: 18px;
+    mask: url("../img/interface/other/icon-phone.svg") no-repeat center;
+    background: var(--black);
+  }
+}
+
+.form__text:focus + .form__input-icon {
+  background-color: var(--green);
+}
+
+.form__text:invalid + .form__input-icon {
+  background-color: var(--orange);
 }
 
 .form__radio {
@@ -195,30 +295,39 @@
 
 .form__footer {
   display: grid;
+  margin-top: 34px;
 
   @include media-min(md) {
-    grid-template-columns: 45% max-content;
+    margin-top: 56px;
+
+    column-gap: 10%;
+
+    grid-template-columns: repeat(2, 1fr);
   }
 
   @include media-min(xl) {
-    grid-column: 1/2;
-    grid-template-columns: 46.5% max-content;
+    margin-top: 60px;
+
+    column-gap: 6.5%;
+
+    grid-column: 1/-1;
   }
 }
 
-.form__required {
+.form__reminder {
+  margin-top: 21px;
+  justify-self: center;
   font-size: 14px;
   line-height: 16px;
   font-family: "Arial", sans-serif;
-  justify-self: center;
+  text-transform: initial;
 
   @include media-min(md) {
-    margin-left: 62px;
+    align-self: center;
+    margin-top: 0;
 
     font-size: 16px;
-  }
 
-  @include media-min(md) {
-    margin-left: 83px;
+    justify-self: start;
   }
 }
