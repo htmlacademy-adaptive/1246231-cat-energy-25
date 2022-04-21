@@ -7,27 +7,32 @@
 }
 
 .address__inner {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
   padding: 26px 0;
 
+  grid-template-columns: repeat(2, 1fr);
+
   @include media-min(md) {
+    display: grid;
     padding: 61px 41px 76px 40px;
+
+    column-gap: 10%;
   }
 
   @include media-min(xl) {
     position: absolute;
     top: 96px;
 
-    width: 565px;
-    padding: 59px 83px 61px 78px;
+    width: 569px;
+    padding: 58px 0;
+
+    column-gap: 80px;
 
     background-color: var(--white);
   }
 }
 
 .address__title {
-  width: min-content;
   margin: 0;
 
   font-weight: 400;
@@ -37,25 +42,33 @@
   text-transform: uppercase;
 
   @include media-min(md) {
+    padding-right: 40%;
+    padding-top: 3px;
     font-size: 20px;
     line-height: 26px;
+  }
+
+  @include media-min(xl) {
+    padding-left: 79px;
+    padding-right: 0;
   }
 }
 
 .address__text {
-  width: min-content;
-
   font-style: unset;
   line-height: 20px;
   font-family: "Arial", sans-serif;
 
   @include media-min(md) {
+    padding-left: 40%;
+
     font-size: 16px;
     text-align: end;
   }
 
   @include media-min(xl) {
     text-align: start;
+    padding-left: 6px;
   }
 }
 
