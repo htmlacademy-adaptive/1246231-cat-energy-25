@@ -101,7 +101,7 @@
 
   font-weight: 400;
   font-size: 24px;
-  line-height: 37px;
+  line-height: 1.25;
   color: var(--black);
   text-transform: uppercase;
 
@@ -109,7 +109,6 @@
     margin: 0;
 
     font-size: 36px;
-    line-height: 36px;
   }
 
   @include media-min(xl) {

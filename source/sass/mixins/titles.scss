@@ -1,9 +1,7 @@
 @mixin title {
-  margin: 0;
-
   font-weight: 400;
   font-size: 36px;
-  line-height: 1;
+  line-height: 1.25;
   font-family: "Oswald", "Arial", sans-serif;
   color: var(--black);
 
@@ -15,10 +13,42 @@
 @mixin sub-title {
   font-weight: 400;
   font-size: 24px;
-  line-height: 1;
+  line-height: 1.25;
   color: var(--black);
+  width: max-content;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 22px;
+    left: 100%;
+    z-index: -1;
+
+    display: block;
+    width: 100vw;
+    height: 2px;
+    margin-left: 40px;
+
+    background-color: var(--green);
+  }
 
   @include media-min(md) {
     font-size: 36px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 22px;
+      right: 100%;
+      z-index: -1;
+
+      display: block;
+      width: 100vw;
+      height: 2px;
+      margin-right: 40px;
+
+      background-color: var(--green);
+    }
   }
 }

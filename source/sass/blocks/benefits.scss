@@ -2,6 +2,10 @@
   font-family: "Arial", sans-serif;
 }
 
+.benefits__title {
+  @include title;
+}
+
 .benefits__list {
   display: grid;
   margin: 0;

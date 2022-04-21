@@ -39,6 +39,8 @@
 }
 
 .case__title {
+  @include title;
+
   grid-column: 1/-1;
 }
 
