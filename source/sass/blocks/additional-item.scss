@@ -8,17 +8,20 @@
   border-bottom: 1px solid var(--grey-3);
 
   @include media-min(md) {
-    padding: 26px 38px 27px;
+    padding: 26px 37px 27px;
 
-    grid-template-columns: 1fr max-content;
+    column-gap: 29%;
+
+    grid-template-columns: repeat(2, 1fr);
   }
 
   @include media-min(xl) {
+    align-items: center;
     padding: 15px 0;
 
-    align-items: center;
-    column-gap: 4.2%;
-    grid-template-columns: 1fr 1fr 27.2%;
+    column-gap: 9%;
+
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -48,17 +51,27 @@
   font-family: "Arial", sans-serif;
 
   @include media-min(md) {
+    justify-content: end;
     margin: 3px 0 0 0;
 
     font-size: 16px;
     line-height: 20px;
+    column-gap: 22%;
+  }
+
+  @include media-min(xl) {
+    justify-content: space-between;
+
+    grid-column: 2/4;
+    grid-row: 1/2;
+    max-width: 50%;
   }
 }
 
 .additional-item__value {
   @include media-min(md) {
     min-width: 43px;
-    margin: 0 0 0 48px;
+    margin: 0;
   }
 }
 
@@ -79,5 +92,6 @@
     margin: 0;
 
     grid-column: 3/4;
+    grid-row: 1/2;
   }
 }

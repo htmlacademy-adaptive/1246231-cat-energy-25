@@ -1,21 +1,33 @@
 .sub-catalog {
   @include media-min(xl) {
     display: grid;
-    justify-content: space-between;
-    align-items: center;
 
-    grid-template-columns: 73.2% 20.1%;
+    column-gap: 6.5%;
+
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.sub-catalog__title {
+  @include sub-title;
+
+  grid-column: 1/-1;
+
+  @include media-min(md) {
+    padding-left: 37px;
+  }
+
+  @include media-min(xl) {
+    padding-left: 0;
   }
 }
 
 .sub-catalog__list {
-  @include media-min(xl) {
-    grid-row: 2/3;
-  }
+  grid-column: 1/4;
 }
 
 .sub-catalog__banner {
   @include media-min(xl) {
-    grid-row: 2/3;
+    grid-column: 4/5;
   }
 }
