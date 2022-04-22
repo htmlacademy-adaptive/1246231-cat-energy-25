@@ -2,28 +2,32 @@
   font-family: "Arial", sans-serif;
 }
 
+.benefits__title {
+  @include title;
+}
+
 .benefits__list {
-  display: flex;
-  row-gap: 20px;
-  flex-direction: column;
+  display: grid;
   margin: 0;
   padding: 0;
-
+  row-gap: 20px;
   list-style: none;
 
   counter-reset: myCounter;
 
   @include media-min(md) {
-    flex-direction: row;
-    flex-wrap: wrap;
+    column-gap: 9%;
 
-    column-gap: 19%;
-
+    grid-template-columns: repeat(2, 1fr);
     row-gap: 83px;
   }
 
   @include media-min(xl) {
-    column-gap: 79px;
+    margin-top: 73px;
+
+    column-gap: 6.5%;
+
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
@@ -37,13 +41,7 @@
   @include media-min(md) {
     flex-direction: column;
     align-items: start;
-    max-width: 35.3%;
-    min-height: 227px;
     padding: 0 0 50px 0;
-  }
-
-  @include media-min(xl) {
-    width: 20.1%;
   }
 }
 
@@ -85,7 +83,7 @@
     content: counter(myCounter);
     position: absolute;
     top: -13px;
-    right: 0;
+    right: 75px;
     z-index: -1;
 
     width: 136px;
@@ -107,6 +105,7 @@
   margin: 0 0 0 19px;
 
   @include media-min(md) {
+    max-width: 250px;
     margin: 32px 0 0 0;
 
     font-size: 16px;
