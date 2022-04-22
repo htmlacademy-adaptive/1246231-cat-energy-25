@@ -73,7 +73,7 @@
           'title':  'E-mail:*',
           'type':  'email',
           'name':  'email',
-          'value':  'кuklachev@gmail.com'
+          'value':  'kuklachev@gmail.com'
         }, {
           'title':  'Телефон:*',
           'type':  'tel',
@@ -84,13 +84,14 @@
         {% for contact in contacts %}
           <label class="form__label" for="{{ contact.name }}-selection">
             <span class="form__sign">{{ contact.title }}</span>
-            <input class="form__text" type="{{ contact.type }}" name="{{ contact.name }}" id="{{ contact.name }}-selection" value="{{ contact.value }}">
+            <input class="form__text" type="{{ contact.type }}" name="{{ contact.name }}" id="{{ contact.name }}-selection" value="{{ contact.value }}" required>
+            <span class="form__input-icon form__input-icon--{{ contact.type }}"></span>
           </label>
         {% endfor %}
       </fieldset>
 
       <!-- Комментарий владельца -->
-      <fieldset class="form__fieldset">
+      <fieldset class="form__fieldset form__fieldset--review">
         <h2 class="form__sub-title">Комментарий</h2>
 
         <textarea class="form__textarea" name="review" id="review-selection">Расскажите обо всех повадкха кота</textarea>
@@ -126,7 +127,7 @@
       <!-- Отправка формы -->
       <div class="form__footer">
         <button class="form__button button" type="submit">Отправить заявку</button>
-        <span class="form__required">* — Обязательные поля</span>
+        <span class="form__reminder">* — Обязательные поля</span>
       </div>
     </form>
   </div>
