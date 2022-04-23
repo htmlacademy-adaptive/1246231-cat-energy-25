@@ -1,10 +1,10 @@
 .footer {
-  padding: 39px 0 22px 0;
+  padding: 36px 0 22px 0;
 
   background-color: var(--grey-5);
 
   @include media-min(md) {
-    padding: 57px 0;
+    padding: 53px 0 60px 0;
   }
 }
 
@@ -38,7 +38,7 @@
 }
 
 .footer__social-list {
-  padding: 21px 0 16px 0;
+  padding: 20px 0 17px 0;
 
   border-bottom: 1px solid var(--grey-6);
 
@@ -48,6 +48,12 @@
     padding: 0;
 
     border: none;
+  }
+}
+
+.footer__madeby {
+  @include media-max(md) {
+    padding-top: 22px;
   }
 }
 
