@@ -10,14 +10,33 @@
   background-repeat: no-repeat;
   background-position-x: center;
 
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/interface/background/gift-mobile@2x.png");
+    background-size: 280px 290px;
+  }
+
   @include media-min(md) {
     min-height: 200px;
     padding: 72px 92px 25px 423px;
+
+    background-image: url("../img/interface/background/gift-tablet@1x.png");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/interface/background/gift-tablet@2x.png");
+      background-size: 707px 200px;
+    }
   }
 
   @include media-min(xl) {
     min-height: 289px;
     padding: 188px 40px 0;
+
+    background-image: url("../img/interface/background/gift-desktop@1x.png");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/interface/background/gift-desktop@2x.png");
+      background-size: 246px 289px;
+    }
   }
 }
 

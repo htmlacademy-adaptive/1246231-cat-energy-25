@@ -32,6 +32,11 @@
   background-repeat: no-repeat;
   background-position-x: center;
 
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/interface/background/index-background-mobile@2x.png");
+    background-size: 320px 302px;
+  }
+
   @include media-min(md) {
     content: none;
   }
@@ -45,6 +50,11 @@
 
     background-image: url("../img/interface/background/index-background-desktop@1x.png");
     background-position-x: right;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/interface/background/index-background-desktop@2x.png");
+      background-size: 720px 694px;
+    }
   }
 }
 
