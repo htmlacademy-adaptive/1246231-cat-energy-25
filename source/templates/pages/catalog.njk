@@ -24,37 +24,41 @@
           'title':  'Cat Energy PRO 500&nbsp;г',
           'massa':  '500 г',
           'taste':  'Рыба',
-          'price':  '700',
+          'price':  '700 Р.',
           'image':  'fish-500'
         }, {
           'title':  'Cat Energy PRO 1000&nbsp;г',
-          'massa':  '100 г',
+          'massa':  '1000 г',
           'taste':  'Рыба',
-          'price':  '1000',
+          'price':  '1000 Р.',
           'image':  'fish-1000'
         }, {
           'title':  'Cat Energy SLIM 500&nbsp;г',
           'massa':  '500 г',
           'taste':  'Гречка',
-          'price':  '400',
+          'price':  '400 Р.',
           'image':  'buckwheat-500'
           }, {
           'title':  'Cat Energy SLIM 1000&nbsp;г',
-          'massa':  '100 г',
+          'massa':  '1000 г',
           'taste':  'Гречка',
-          'price':  '700',
+          'price':  '700 Р.',
           'image':  'buckwheat-1000'
         }, {
           'title':  'Cat Energy SLIM 500&nbsp;г',
-          'massa':  '100 г',
+          'massa':  '500 г',
           'taste':  'Рис',
-          'price':  '500',
+          'price':  '500 Р.',
           'image':  'rice-500'
         }] %}
 
         {% for item in product_list %}
           <article class="product-item">
-            <img class="product-item__image" src="img/content/catalog/{{ item.image }}@1x.png" alt="" width="84" height="101">
+            <picture class="product-item__picture">
+              <source media="(min-width: 1440px)" srcset="img/content/catalog/desktop/{{ item.image }}-desktop@1x.png 1x, img/content/catalog/desktop/{{ item.image }}-desktop@2x.png 2x">
+              <source media="(min-width: 768px)" srcset="img/content/catalog/tablet/{{ item.image }}-tablet@1x.png 1x, img/content/catalog/tablet/{{ item.image }}-tablet@2x.png 2x">
+              <img class="product-item__image" src="img/content/catalog/mobile/{{ item.image }}-mobile@1x.png" srcset="img/content/catalog/mobile/{{ item.image }}-mobile@2x.png 2x" alt="" width="84" height="112">
+            </picture>
             <h3 class="product-item__title">{{ item.title | safe }}</h3>
             <dl class="product-item__description">
               <div class="product-item__description-row">
@@ -74,10 +78,11 @@
           </article>
         {% endfor %}
 
-        <a class="product-item product-item--more" href="#">
-          <h3 class="product-item__title">Показать еще 100500 товаров</h3>
-          <span class="product-item__more-text">На самом деле вкусов гораздо больше!</span>
-          <span class="product-item__button product-item__button--more button">Показать все</span>
+        <a class="catalog__show-more" href="#">
+          <span class="catalog__show-icon"></span>
+          <h3 class="catalog__title">Показать еще 100500 товаров</h3>
+          <span class="catalog__text">На самом деле вкусов гораздо больше!</span>
+          <span class="catalog__button button">Показать все</span>
         </a>
       </div>
     </section>
