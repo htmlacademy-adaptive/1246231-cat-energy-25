@@ -1,0 +1,91 @@
+/* stylelint-disable */
+@mixin radio {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  margin: 0;
+
+  border: 1px solid var(--grey-3);
+  border-radius: 50%;
+  cursor: pointer;
+
+  -webkit-appearance: none;
+
+  @include media-min(md) {
+    width: 40px;
+    height: 40px;
+  }
+
+  &::before {
+    content: "";
+
+    display: block;
+    width: 14px;
+    height: 14px;
+    margin: auto;
+
+    background-color: var(--green);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+
+    @include media-min(md) {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  &:checked::before {
+    opacity: 1;
+  }
+
+  &:hover {
+    border-color: var(--grey-9);
+  }
+}
+
+@mixin checkbox {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  margin: 0;
+
+  border: 1px solid var(--grey-3);
+  cursor: pointer;
+
+  -webkit-appearance: none;
+
+  @include media-min(md) {
+    width: 40px;
+    height: 40px;
+  }
+
+  &::before {
+    content: "";
+
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: auto;
+
+    background-image: url("../img/interface/other/icon-tick.svg");
+    background-size: contain;
+    opacity: 0;
+
+    transition: opacity 0.2s ease-in-out;
+
+    @include media-min(md) {
+      width: 26px;
+      height: 26px;
+    }
+  }
+
+  &:checked::before {
+    opacity: 1;
+  }
+
+  &:hover {
+    border-color: var(--grey-9);
+  }
+}
+/* stylelint-enable */
