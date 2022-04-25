@@ -58,7 +58,7 @@
         }] %}
 
         {% for task in tasks %}
-          <label class="form__label" for="{{ task.name }}-selection">
+          <label class="form__label form__label--radio" for="{{ task.name }}-selection">
             <input class="form__radio" type="radio" name="target" id="{{ task.name }}-selection" value="{{ task.name }}" {{ 'checked' if task.checked }}>
             <span class="form__sign">{{ task.title }}</span>
           </label>
@@ -117,7 +117,7 @@
         }] %}
 
         {% for addition in additionals %}
-          <label class="form__label" for="{{ addition.name }}-selection">
+          <label class="form__label form__label--checkbox" for="{{ addition.name }}-selection">
             <input class="form__checkbox" type="checkbox" name="{{ addition.name }}" id="{{ addition.name }}-selection" {{ 'checked' if addition.checked }}>
             <span class="form__sign">{{ addition.title }}</span>
           </label>
