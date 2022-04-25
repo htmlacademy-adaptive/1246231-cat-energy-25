@@ -170,19 +170,19 @@
 
         <div class="slider">
           <div class="slider__images">
-            <picture class="slider__image-before">
+            <picture>
               <source media="(min-width: 768px)" srcset="img/content/slider/tablet/cat-fat-tablet@1x.png 1x, img/content/catalog/tablet/cat-fat-tablet@2x.png 2x">
-              <img class="slider__image" src="img/content/slider/mobile/cat-fat-mobile@1x.png" srcset="img/content/slider/mobile/cat-fat-mobile@2x.png 2x" alt="Вид вашего кота до." width="280" height="232">
+              <img class="slider__image slider__image--before" src="img/content/slider/mobile/cat-fat-mobile@1x.png" srcset="img/content/slider/mobile/cat-fat-mobile@2x.png 2x" alt="Вид вашего кота до." width="280" height="232">
             </picture>
-            <picture class="slider__image-after">
+            <picture>
               <source media="(min-width: 768px)" srcset="img/content/slider/tablet/cat-skinny-tablet@1x.png 1x, img/content/catalog/tablet/cat-skinny-tablet@2x.png 2x">
-              <img class="slider__image" src="img/content/slider/mobile/cat-skinny-mobile@1x.png" srcset="img/content/slider/mobile/cat-skinny-mobile@2x.png 2x" alt="Вид вашего кота после." width="280" height="232">
+              <img class="slider__image slider__image--after" src="img/content/slider/mobile/cat-skinny-mobile@1x.png" srcset="img/content/slider/mobile/cat-skinny-mobile@2x.png 2x" alt="Вид вашего кота после." width="280" height="232">
             </picture>
           </div>
 
           <div class="slider__controls">
             <span>Было</span>
-            <input class="slider__range-buton" type="range">
+            <input class="slider__range-buton" type="range" oninput="changeSliderValue()" type="range">
             <div class="slider__radio-switching">
               <input class="slider__radio-buton" type="radio" name="switch" checked>
               <input class="slider__radio-buton" type="radio" name="switch">
