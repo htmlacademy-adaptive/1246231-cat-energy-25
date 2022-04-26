@@ -98,7 +98,7 @@
   background-color: transparent;
   border: none;
 
-  @include media-min(xl) {
+  @include media-min(md) {
     font-size: 20px;
     line-height: 30px;
   }
