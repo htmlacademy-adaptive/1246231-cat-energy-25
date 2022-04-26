@@ -108,7 +108,9 @@
 .case__progress {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 
+  row-gap: 40px;
   column-gap: 11%;
 
   @include media-max(md) {
@@ -216,5 +218,19 @@
     margin-top: 46px;
 
     column-gap: 61px;
+  }
+}
+
+.case__slider {
+  max-width: 320px;
+  margin: 0 auto;
+
+  @include media-min(md) {
+    max-width: 708px;
+  }
+
+  @include media-min(md) {
+    max-width: 100%;
+    margin: 0;
   }
 }
