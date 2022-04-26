@@ -135,13 +135,13 @@
   flex-grow: 1;
   flex-basis: 124px;
   justify-content: center;
-  padding: 14px 0;
+  padding: 14px;
 
   border: 1px solid var(--grey-3);
   border-radius: 3px;
 
   @include media-min(md) {
-    padding: 17px 0;
+    padding: 17px;
   }
 
   @include media-min(xl) {

@@ -88,14 +88,14 @@
 
 .intro__title {
   max-width: 252px;
-  margin-bottom: 26px;
+  margin-bottom: 23px;
 
   font-size: 36px;
   line-height: 36px;
 
   @include media-min(md) {
     max-width: 430px;
-    margin-bottom: 43px;
+    margin-bottom: 38px;
 
     font-size: 60px;
     line-height: 60px;
@@ -103,21 +103,20 @@
 }
 
 .intro__text {
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 
-  line-height: 14px;
+  line-height: 1.5em;
   text-transform: uppercase;
 
   @include media-min(md) {
-    margin-bottom: 50px;
+    margin-bottom: 43px;
 
     font-size: 20px;
-    line-height: 20px;
   }
 }
 
 .intro__image {
-  margin-bottom: 3px;
+  margin-bottom: 5px;
 
   @include media-min(md) {
     position: absolute;
@@ -142,7 +141,6 @@
 
 .intro__button {
   align-self: stretch;
-  padding: 11px 0;
 
   @include media-max(md) {
     font-size: 14px;
@@ -152,6 +150,5 @@
   @include media-min(md) {
     max-width: 246px;
     margin-bottom: 20px;
-    padding: 17px 28px;
   }
 }
