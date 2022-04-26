@@ -16,37 +16,11 @@
   }
 }
 
-.catalog__show-more {
-  position: relative;
-
+.catalog__item {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 26px 0 24px;
-
-  text-align: center;
-  color: var(--black-3);
-  text-decoration: none;
-
-  background: none;
-
-  @include media-min(md) {
-    align-items: center;
-    margin-top: 85px;
-    padding: 50px 35px 35px;
-
-    border: 2px solid var(--grey-5);
-  }
-
-  @include media-min(xl) {
-    margin-top: 80px;
-    padding-bottom: 40px;
-
-    border: 2px solid var(--grey-5);
-  }
 }
 
-.catalog__show-more::before,
+.catalog__item::before,
 .catalog__show-more::after {
   @include media-max(md) {
     content: "";
@@ -61,12 +35,54 @@
   }
 }
 
-.catalog__show-more::before {
+.catalog__item::before {
   top: 0;
 }
 
-.catalog__show-more::after {
+.catalog__item::after {
   bottom: 0;
+}
+
+.catalog__show-more {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 26px 0 24px;
+  justify-content: end;
+  text-align: center;
+  color: var(--black-3);
+  text-decoration: none;
+
+  @include media-min(md) {
+    margin-top: 85px;
+    padding: 50px 35px 35px;
+    border: 2px solid var(--grey-5);
+  }
+
+  @include media-min(xl) {
+    margin-top: 80px;
+    padding-bottom: 40px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+
+    display: block;
+    width: 30px;
+    height: 30px;
+
+    background-image: url("../img/interface/other/icon-plus.svg");
+    background-size: cover;
+
+    @include media-min(md) {
+      width: 60px;
+      height: 60px;
+      top: 48px;
+    }
+  }
 }
 
 .catalog__title {
@@ -86,27 +102,8 @@
     line-height: 22px;
   }
 
-  @include media-min(md) {
+  @include media-min(xl) {
     width: 100%;
-  }
-}
-
-.catalog__show-icon {
-  width: 30px;
-  height: 30px;
-  margin-bottom: 7px;
-
-  background-image: url("../img/interface/other/icon-plus.svg");
-  background-size: cover;
-
-  @include media-min(md) {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 30px;
-  }
-
-  @include media-min(md) {
-    margin-bottom: 27px;
   }
 }
 
@@ -116,6 +113,7 @@
   font-family: "Arial", sans-serif;
 
   @include media-min(md) {
+    margin-bottom: 66px;
     padding: 0 25px;
 
     font-size: 16px;
@@ -134,11 +132,9 @@
   color: var(--grey);
 
   @include media-min(md) {
-    margin-top: auto;
     padding: 10px;
 
     font-size: 16px;
-    line-height: 20px;
   }
 }
 
