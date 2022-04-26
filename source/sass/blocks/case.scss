@@ -1,4 +1,6 @@
 .case {
+  padding: 23px 0 45px 0;
+
   font-family: "Oswald", "Arial", sans-serif;
   letter-spacing: -0.01em;
 
@@ -6,6 +8,7 @@
 
   @include media-min(md) {
     letter-spacing: normal;
+    padding: 35px 0 65px 0;
   }
 
   @include media-min(xl) {
@@ -28,6 +31,7 @@
 .case__inner {
   display: grid;
   align-self: start;
+  margin-bottom: 26px;
 
   @include media-min(md) {
     grid-template-columns: 1.2fr 1fr;
@@ -41,25 +45,30 @@
 .case__title {
   @include title;
 
+  margin: 0 0 24px 0;
+
   grid-column: 1/-1;
+
+  @include media-min(md) {
+    margin-bottom: 41px;
+  }
 }
 
 .case__descripriton {
-  margin-top: 42px;
+  margin-bottom: 6px;
 
   font-family: "Arial", sans-serif;
 
   grid-column: 1/-1;
 
   @include media-min(md) {
-    margin-top: 15px;
+    margin-bottom: 39px;
 
     font-size: 16px;
     line-height: 24px;
   }
 
   @include media-min(xl) {
-    margin-top: 97px;
     padding-right: 135px;
   }
 }
@@ -67,20 +76,17 @@
 .case__progress {
   display: flex;
   justify-content: space-between;
-  margin: 19px 0 0 0;
+  margin-bottom: 20px;
 
   column-gap: 11%;
 
   @include media-min(md) {
-    margin-top: 38px;
-    margin-right: 21px;
     column-gap: 12%;
+    margin-right: 21px;
   }
 
   @include media-min(xl) {
     justify-content: start;
-    margin-top: 53px;
-    margin-right: 0;
     column-gap: 7%;
   }
 }
@@ -143,8 +149,6 @@
 }
 
 .case__price {
-  margin: 36px 0 0 0;
-
   font-weight: 400;
   line-height: 20px;
   text-align: center;
@@ -155,7 +159,7 @@
   @include media-min(md) {
     display: flex;
     flex-direction: column;
-    margin-top: 50px;
+    margin-top: 25px;
 
     font-size: 20px;
     line-height: 20px;

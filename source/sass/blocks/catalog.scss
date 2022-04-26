@@ -1,16 +1,153 @@
 .catalog__list {
   display: grid;
-  row-gap: 44px;
 
   @include media-min(md) {
     column-gap: 9%;
 
     grid-template-columns: repeat(2, 1fr);
+    row-gap: 56px;
   }
 
   @include media-min(xl) {
     column-gap: 6.5%;
 
     grid-template-columns: repeat(4, 1fr);
+    row-gap: 62px;
   }
+}
+
+.catalog__show-more {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 26px 0 24px;
+
+  text-align: center;
+  color: var(--black-3);
+  text-decoration: none;
+
+  background: none;
+
+  @include media-min(md) {
+    align-items: center;
+    margin-top: 85px;
+    padding: 50px 35px 35px;
+
+    border: 2px solid var(--grey-5);
+  }
+
+  @include media-min(xl) {
+    margin-top: 80px;
+    padding-bottom: 40px;
+
+    border: 2px solid var(--grey-5);
+  }
+}
+
+.catalog__show-more::before,
+.catalog__show-more::after {
+  @include media-max(md) {
+    content: "";
+    position: absolute;
+
+    align-self: start;
+    width: 200vw;
+    height: 1px;
+
+    background-color: var(--grey-7);
+    transform: translateX(-50%);
+  }
+}
+
+.catalog__show-more::before {
+  top: 0;
+}
+
+.catalog__show-more::after {
+  bottom: 0;
+}
+
+.catalog__title {
+  width: 100%;
+  margin-bottom: 8px;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+
+  @include media-min(md) {
+    width: 65%;
+    margin-bottom: 24px;
+
+    font-size: 20px;
+    line-height: 22px;
+  }
+
+  @include media-min(md) {
+    width: 100%;
+  }
+}
+
+.catalog__show-icon {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 7px;
+
+  background-image: url("../img/interface/other/icon-plus.svg");
+  background-size: cover;
+
+  @include media-min(md) {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 30px;
+  }
+
+  @include media-min(md) {
+    margin-bottom: 27px;
+  }
+}
+
+.catalog__text {
+  font-size: 12px;
+  line-height: 16px;
+  font-family: "Arial", sans-serif;
+
+  @include media-min(md) {
+    padding: 0 25px;
+
+    font-size: 16px;
+    line-height: 18px;
+  }
+
+  @include media-min(xl) {
+    padding: 0;
+  }
+}
+
+.catalog__button {
+  align-self: stretch;
+  margin-top: 21px;
+  background-color: var(--grey-5);
+  color: var(--grey);
+
+  @include media-min(md) {
+    margin-top: auto;
+    padding: 10px;
+
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.catalog__show-more:hover .catalog__button {
+  color: var(--grey);
+
+  background-color: var(--grey-7);
+}
+
+.catalog__show-more:active .catalog__button {
+  opacity: 0.3;
 }

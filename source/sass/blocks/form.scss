@@ -176,9 +176,16 @@
 
   column-gap: 5%;
 
+  cursor: pointer;
+
   @include media-min(md) {
     column-gap: 20px;
   }
+}
+
+.form__label--radio:active,
+.form__label--checkbox:active {
+  opacity: 0.3;
 }
 
 .form__text {
@@ -236,29 +243,11 @@
 }
 
 .form__radio {
-  width: 30px;
-  height: 30px;
-  margin: 0;
-
-  @include media-min(md) {
-    width: 40px;
-    height: 40px;
-  }
+  @include radio;
 }
 
 .form__checkbox {
-  width: 30px;
-  height: 30px;
-  margin: 0;
-
-  border: 1px solid var(--grey-3);
-
-  appearance: none;
-
-  @include media-min(md) {
-    width: 40px;
-    height: 40px;
-  }
+  @include checkbox;
 }
 
 .form__textarea {

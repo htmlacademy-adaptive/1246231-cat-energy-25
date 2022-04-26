@@ -4,6 +4,12 @@
 
 .benefits__title {
   @include title;
+
+  margin: 0 0 38px 0;
+
+  @include media-min(md) {
+    margin-bottom: 65px;
+  }
 }
 
 .benefits__list {
@@ -16,14 +22,14 @@
   counter-reset: myCounter;
 
   @include media-min(md) {
-    column-gap: 9%;
+    column-gap: 8.5%;
 
     grid-template-columns: repeat(2, 1fr);
     row-gap: 83px;
   }
 
   @include media-min(xl) {
-    margin-top: 73px;
+    margin-top: 65px;
 
     column-gap: 6.5%;
 

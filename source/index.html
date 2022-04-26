@@ -7,6 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Кэт энерджи</title>
   <link rel="stylesheet" href="css/style.min.css">
+  <link rel="icon" href="favicon.ico">
+  <link rel="icon" href="img/favicons/fav-icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/favicons/fav-icon@180.png">
+  <link rel="manifest" href="manifest.webmanifest">
 </head>
 
 <body class="page">
@@ -165,18 +169,22 @@
 
         <div class="slider">
           <div class="slider__images">
-            <div class="slider__image-before">
-              <img class="slider__image" src="img/content/slider/cat-fat.png" alt="Вид вашего кота до." width="280" height="232">
-            </div>
-            <div class="slider__image-after">
-              <img class="slider__image" src="img/content/slider/cat-skinny.png" alt="Вид вашего кота после." width="280" height="232">
-            </div>
+            <picture>
+              <source media="(min-width: 768px)" srcset="img/content/slider/tablet/cat-fat-tablet@1x.png 1x, img/content/catalog/tablet/cat-fat-tablet@2x.png 2x">
+              <img class="slider__image slider__image--before" src="img/content/slider/mobile/cat-fat-mobile@1x.png" srcset="img/content/slider/mobile/cat-fat-mobile@2x.png 2x" alt="Вид вашего кота до." width="280" height="232">
+            </picture>
+            <picture>
+              <source media="(min-width: 768px)" srcset="img/content/slider/tablet/cat-skinny-tablet@1x.png 1x, img/content/catalog/tablet/cat-skinny-tablet@2x.png 2x">
+              <img class="slider__image slider__image--after" src="img/content/slider/mobile/cat-skinny-mobile@1x.png" srcset="img/content/slider/mobile/cat-skinny-mobile@2x.png 2x" alt="Вид вашего кота после." width="280" height="232">
+            </picture>
           </div>
 
           <div class="slider__controls">
             <span>Было</span>
-            <div class="slider__range-bar">
-              <button class="slider__range-buton" type="button"></button>
+            <input class="slider__range-buton" type="range" oninput="changeSliderValue()" type="range">
+            <div class="slider__radio-switching">
+              <input class="slider__radio-buton" type="radio" name="switch" checked>
+              <input class="slider__radio-buton" type="radio" name="switch">
             </div>
             <span>Стало</span>
           </div>

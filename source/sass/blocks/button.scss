@@ -22,3 +22,11 @@
     line-height: 20px;
   }
 }
+
+.button:hover {
+  background-color: var(--green-2);
+}
+
+.button:active {
+  color: var(--white-alpha3);
+}
