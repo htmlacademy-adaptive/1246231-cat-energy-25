@@ -1,20 +1,25 @@
 .intro {
   position: relative;
 
-  padding: 26px 0 0 0;
+  padding-top: 26px;
 
   color: var(--white);
 
+  @include media-max(md) {
+    margin-bottom: 20px;
+  }
+
   @include media-min(md) {
     min-height: 874px;
-    padding: 63px 0 0 0;
+    padding-top: 63px;
   }
 
   @include media-min(xl) {
     position: unset;
 
     min-height: 583px;
-    padding: 109px 0 0 0;
+    margin-bottom: 80px;
+    padding-top: 109px;
   }
 }
 
@@ -96,13 +101,13 @@
 }
 
 .intro__text {
-  margin: 26px 0 0 0;
+  margin-top: 26px;
 
   line-height: 14px;
   text-transform: uppercase;
 
   @include media-min(md) {
-    margin: 43px 0 0 0;
+    margin-top: 43px;
 
     font-size: 20px;
     line-height: 20px;
@@ -110,7 +115,7 @@
 }
 
 .intro__image {
-  margin: 29px 0 0 0;
+  margin-top: 29px;
 
   @include media-min(md) {
     position: absolute;
@@ -119,7 +124,7 @@
 
     width: 709px;
     height: 609px;
-    margin: 19px 0 0 0;
+    margin-top: 19px;
 
     transform: translateX(-50%);
   }
@@ -135,19 +140,21 @@
 
 .intro__button {
   align-self: stretch;
-  margin: 3px 0 0 0;
+  margin-top: 3px;
   padding: 11px 0;
 
-  font-size: 14px;
-  line-height: 18px;
+  @include media-max(md) {
+    font-size: 14px;
+    line-height: 18px;
+  }
 
   @include media-min(md) {
     max-width: 246px;
-    margin: 48px 0 0 0;
+    margin-top: 48px;
     padding: 17px 28px;
   }
 
   @include media-min(xl) {
-    margin: 51px 0 0 0;
+    margin-top: 51px;
   }
 }

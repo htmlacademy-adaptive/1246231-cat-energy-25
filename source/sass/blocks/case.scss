@@ -1,5 +1,6 @@
 .case {
-  padding: 23px 0 45px 0;
+  padding-top: 23px;
+  padding-bottom: 42px;
 
   font-family: "Oswald", "Arial", sans-serif;
   letter-spacing: -0.01em;
@@ -7,14 +8,36 @@
   background: linear-gradient(0deg, var(--grey-5) 100%, var(--white) 100%);
 
   @include media-min(md) {
+    position: relative;
+    padding-top: 35px;
+    padding-bottom: 60px;
+
     letter-spacing: normal;
-    padding: 35px 0 65px 0;
+
+    background: linear-gradient(0deg, var(--grey-5) 43%, var(--white) 43%);
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+
+      display: block;
+      width: 100%;
+      height: 1px;
+
+      background-color: var(--white-2);
+    }
   }
 
   @include media-min(xl) {
-    padding-bottom: 66px;
+    padding-top: 0;
+    padding-bottom: 50px;
 
-    background: linear-gradient(0deg, var(--grey-5) 71%, var(--white) 71%);
+    background: linear-gradient(0deg, var(--grey-5) 73%, var(--white) 73%);
+
+    &::before {
+      content: none;
+    }
   }
 }
 
@@ -31,13 +54,17 @@
 .case__inner {
   display: grid;
   align-self: start;
-  margin-bottom: 26px;
+  margin-bottom: 30px;
 
   @include media-min(md) {
+    margin-bottom: 70px;
+
     grid-template-columns: 1.2fr 1fr;
   }
 
   @include media-min(xl) {
+    margin-bottom: 0;
+    padding-top: 32px;
     grid-template-columns: 1fr;
   }
 }
@@ -51,6 +78,10 @@
 
   @include media-min(md) {
     margin-bottom: 41px;
+  }
+
+  @include media-min(xl) {
+    margin-bottom: 123px;
   }
 }
 
@@ -69,6 +100,7 @@
   }
 
   @include media-min(xl) {
+    margin-bottom: 55px;
     padding-right: 135px;
   }
 }
@@ -76,9 +108,12 @@
 .case__progress {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
 
   column-gap: 11%;
+
+  @include media-max(md) {
+    margin-bottom: 20px;
+  }
 
   @include media-min(md) {
     column-gap: 12%;
@@ -87,7 +122,7 @@
 
   @include media-min(xl) {
     justify-content: start;
-    column-gap: 7%;
+    column-gap: 8%;
   }
 }
 
@@ -98,10 +133,14 @@
   flex-grow: 1;
   flex-basis: 124px;
   justify-content: center;
-  padding: 14px 0 16px 0;
+  padding: 14px 0;
 
   border: 1px solid var(--grey-3);
   border-radius: 3px;
+
+  @include media-min(md) {
+    padding: 17px 0;
+  }
 
   @include media-min(xl) {
     flex-grow: 0;
@@ -130,6 +169,10 @@
 
     font-size: 14px;
     line-height: 14px;
+  }
+
+  @include media-min(xl) {
+    bottom: -6px;
   }
 }
 
@@ -170,7 +213,7 @@
 
   @include media-min(xl) {
     flex-direction: row;
-    margin-top: 63px;
+    margin-top: 46px;
 
     column-gap: 61px;
   }
