@@ -88,12 +88,14 @@
 
 .intro__title {
   max-width: 252px;
+  margin-bottom: 26px;
 
   font-size: 36px;
   line-height: 36px;
 
   @include media-min(md) {
     max-width: 430px;
+    margin-bottom: 43px;
 
     font-size: 60px;
     line-height: 60px;
@@ -101,13 +103,13 @@
 }
 
 .intro__text {
-  margin-top: 26px;
+  margin-bottom: 30px;
 
   line-height: 14px;
   text-transform: uppercase;
 
   @include media-min(md) {
-    margin-top: 43px;
+    margin-bottom: 50px;
 
     font-size: 20px;
     line-height: 20px;
@@ -115,22 +117,22 @@
 }
 
 .intro__image {
-  margin-top: 29px;
+  margin-bottom: 3px;
 
   @include media-min(md) {
     position: absolute;
+    top: 265px;
     left: 50%;
     z-index: -1;
 
     width: 709px;
     height: 609px;
-    margin-top: 19px;
 
     transform: translateX(-50%);
   }
 
   @include media-min(xl) {
-    top: 122px;
+    top: 140px;
     left: 58%;
 
     width: 552px;
@@ -140,7 +142,6 @@
 
 .intro__button {
   align-self: stretch;
-  margin-top: 3px;
   padding: 11px 0;
 
   @include media-max(md) {
@@ -150,11 +151,7 @@
 
   @include media-min(md) {
     max-width: 246px;
-    margin-top: 48px;
+    margin-bottom: 20px;
     padding: 17px 28px;
-  }
-
-  @include media-min(xl) {
-    margin-top: 51px;
   }
 }
