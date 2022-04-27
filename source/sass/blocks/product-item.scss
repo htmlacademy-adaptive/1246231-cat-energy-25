@@ -36,7 +36,7 @@
 
     width: 200vw;
     height: 1px;
-    background-color: #ebebeb;
+    background-color: var(--grey-7);
     transform: translateX(-50%);
   }
 }
@@ -120,6 +120,7 @@
 .product-item__description-row {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   @include media-min(md) {
     margin-bottom: 8px;
@@ -134,6 +135,10 @@
   }
 }
 
+.product-item__definition {
+  flex-basis: 60%;
+}
+
 .product-item__value {
   margin: 0;
 }
@@ -145,4 +150,8 @@
   line-height: 20px;
 
   grid-column: 1/-1;
+
+  @include media-min(md) {
+    align-self: end;
+  }
 }

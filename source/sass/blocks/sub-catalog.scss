@@ -1,6 +1,7 @@
 .sub-catalog {
   @include media-min(xl) {
     display: grid;
+    align-items: start;
 
     column-gap: 6.5%;
 
@@ -23,7 +24,18 @@
 }
 
 .sub-catalog__list {
-  grid-column: 1/4;
+  display: grid;
+  row-gap: 1px;
+
+  @include media-min(md) {
+    border-right: 1px solid var(--grey-3);
+    border-left: 1px solid var(--grey-3);
+  }
+
+  @include media-min(xl) {
+    grid-column: 1/4;
+    border: none;
+  }
 }
 
 .sub-catalog__banner {

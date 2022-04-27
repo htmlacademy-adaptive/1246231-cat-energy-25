@@ -1,14 +1,15 @@
 .banner {
   display: flex;
   min-height: 290px;
-  padding: 0 60px 43px;
+  padding: 130px 60px 43px;
 
   font-family: "Arial", sans-serif;
 
   background-color: var(--green-3);
   background-image: url("../img/interface/background/gift-mobile@1x.png");
   background-repeat: no-repeat;
-  background-position-x: center;
+  background-position: center;
+  background-size: cover;
 
   @media (min-resolution: 2dppx) {
     background-image: url("../img/interface/background/gift-mobile@2x.png");
@@ -17,7 +18,7 @@
 
   @include media-min(md) {
     min-height: 200px;
-    padding: 72px 92px 25px 423px;
+    padding: 72px 92px 25px 60%;
 
     background-image: url("../img/interface/background/gift-tablet@1x.png");
 
@@ -29,7 +30,7 @@
 
   @include media-min(xl) {
     min-height: 289px;
-    padding: 188px 40px 0;
+    padding: 186px 40px 20px;
 
     background-image: url("../img/interface/background/gift-desktop@1x.png");
 
@@ -41,14 +42,21 @@
 }
 
 .banner__text {
-  margin: 0;
+  margin: auto 0 0;
 
   font-size: 16px;
   line-height: 20px;
   text-align: center;
   color: var(--white);
 
-  @include media-max(xl) {
+  @include media-min(md) {
+    max-width: 170px;
+    margin-top: 0;
+
     text-align: unset;
+  }
+
+  @include media-min(xl) {
+    text-align: center;
   }
 }
