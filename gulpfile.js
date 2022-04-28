@@ -4,6 +4,7 @@ import del from 'del';
 import rename from 'gulp-rename';
 import nunjucks from 'gulp-nunjucks-render'
 import htmlmin from 'gulp-htmlmin';
+import formatHtml from 'gulp-format-html';
 import plumber from 'gulp-plumber';
 import sass from 'gulp-dart-sass';
 import postcss from 'gulp-postcss';
@@ -20,7 +21,9 @@ export const html = () => {
     .pipe(nunjucks({
       path: ['source/templates']
     }))
-    // .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(htmlmin(
+      {collapseWhitespace: true}))
+    .pipe(formatHtml())
     .pipe(gulp.dest('source/'))
 }
 
