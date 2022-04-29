@@ -56,7 +56,7 @@
     </button>
   </header>
 
-  <main class="main">
+  <main class="main {{ 'main--inner' if name_page !== 'index' }}">
 
     {% block content %}{% endblock content %}
 
