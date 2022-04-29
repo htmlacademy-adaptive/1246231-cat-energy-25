@@ -125,11 +125,10 @@
       </div>
     </div>
   </footer>
+
   <script src="js/header-menu.js"></script>
   <script src="js/no-script.js"></script>
-  {% if name_page == 'index' %}
-    <script src="js/slider.js"></script>
-  {% endif %}
+  {% block js %}{% endblock %}
 </body>
 
 </html>
