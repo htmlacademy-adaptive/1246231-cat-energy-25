@@ -1,18 +1,40 @@
-.catalog__list {
-  display: grid;
+.catalog__title {
+  @include title;
+
+  margin-top: 24px;
+  margin-bottom: 30px;
 
   @include media-min(md) {
-    column-gap: 9%;
-
-    grid-template-columns: repeat(2, 1fr);
-    row-gap: 56px;
+    margin-top: 55px;
+    margin-bottom: 50px;
   }
 
   @include media-min(xl) {
+    margin-top: 67px;
+  }
+}
+
+.catalog__list {
+  display: grid;
+  padding: 5px 0;
+
+  @include media-min(md) {
+    padding: 25px 0 35px;
+
+    column-gap: 9%;
+
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 57px;
+  }
+
+  @include media-min(xl) {
+    padding-top: 30px;
+    padding-bottom: 40px;
+
     column-gap: 6.5%;
 
     grid-template-columns: repeat(4, 1fr);
-    row-gap: 62px;
+    row-gap: 63px;
   }
 }
 
@@ -93,7 +115,7 @@
   }
 }
 
-.catalog__title {
+.catalog__item-title {
   width: 100%;
   margin-top: 52px;
   margin-bottom: 8px;
