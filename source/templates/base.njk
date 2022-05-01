@@ -1,3 +1,6 @@
+{% from 'macros/svg.njk' import svg %}
+{% from 'macros/picture.njk' import picture %}
+
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -91,15 +94,15 @@
 
       <ul class="footer__social-list social-list">
         {% set social_links = [{
-          'svg':  'vk',
+          'svg':  'icon-vk',
           'url':  'vk.com/htmlacademy',
           'aria': 'Мы в вконтакте.'
         }, {
-          'svg':  'you',
+          'svg':  'icon-you',
           'url':  'www.youtube.com/c/HTMLAcademyRUS/',
           'aria': 'Мы в ютубе.'
         }, {
-          'svg':  'tg',
+          'svg':  'icon-tg',
           'url':  't.me/htmlacademy',
           'aria': 'Мы в телеграме.'
         }] %}
@@ -107,9 +110,7 @@
         {% for link in social_links %}
           <li>
             <a class="social-list__link" href="https://{{ link.url }}" target="_blank">
-              <svg class="social-list__image" aria-label="{{ link.aria }}" width="28" height="22">
-                <use xlink:href="img/sprite.svg#icon-{{ link.svg }}"></use>
-              </svg>
+              {{ svg('social-list__image', link.svg , link.aria , '28', '22') }}
             </a>
           </li>
         {% endfor %}
@@ -118,9 +119,8 @@
       <div class="footer__madeby">
         <a class="footer__madeby-link" href="https://htmlacademy.ru/">
           <span class="footer__madeby-text">HTML Academy</span>
-          <svg class="social-list__image" aria-label="Логотип HTML Academy." width="27" height="34">
-            <use xlink:href="img/sprite.svg#icon-academy"></use>
-          </svg>
+
+          {{ svg('footer__social-icon', 'icon-academy', 'text', '27', '34') }}
         </a>
       </div>
     </div>
