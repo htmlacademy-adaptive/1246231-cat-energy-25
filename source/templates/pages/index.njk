@@ -12,14 +12,18 @@
 
         <span class="intro__text">Занялся собой? Займись котом!</span>
 
-        <picture>
-          <!-- <source type="image/webp" media="(min-width: 1440px)" srcset="img/content/other/index-intro-desktop@1x.webp, img/content/other/index-intro-desktop@2x.webp 2x">
-          <source type="image/webp" media="(min-width: 768px)" srcset="img/content/other/index-intro-desktop@1x.webp, img/content/other/index-intro-desktop@2x.webp 2x">
-          <source type="image/webp" srcset="img/content/other/index-intro-mobile@1x.webp, img/content/other/index-intro-mobile@2x.webp 2x"> -->
-          <source media="(min-width: 1440px)" srcset="img/content/other/index-intro-desktop@1x.png">
-          <source media="(min-width: 768px)" srcset="img/content/other/index-intro-tablet@1x.jpg">
-          <img class="intro__image" src="img/content/other/index-intro-mobile@1x.png" alt="" width="280" height="270">
-        </picture>
+        {{ picture(
+          path_file='img/content/other/',
+          class_name='intro__image',
+          mobile_image='index-intro-mobile@1x',
+          mobile_image2x='index-intro-mobile@2x',
+          tablet_image='index-intro-tablet@1x',
+          tablet_image2x='index-intro-tablet@2x',
+          desktop_image='index-intro-desktop@1x',
+          desktop_image2x='index-intro-desktop@2x',
+          width='280',
+          height='270'
+        )}}
 
         <a class="intro__button button" href="#">Подобрать программу</a>
       </p>
@@ -116,14 +120,41 @@
 
         <div class="case__slider slider">
           <div class="slider__images">
-            <picture>
-              <source media="(min-width: 768px)" srcset="img/content/slider/tablet/cat-fat-tablet@1x.png 1x, img/content/catalog/tablet/cat-fat-tablet@2x.png 2x">
-              <img class="slider__image slider__image--before" src="img/content/slider/mobile/cat-fat-mobile@1x.png" srcset="img/content/slider/mobile/cat-fat-mobile@2x.png 2x" alt="Вид вашего кота до." width="280" height="232">
-            </picture>
-            <picture>
-              <source media="(min-width: 768px)" srcset="img/content/slider/tablet/cat-skinny-tablet@1x.png 1x, img/content/catalog/tablet/cat-skinny-tablet@2x.png 2x">
-              <img class="slider__image slider__image--after" src="img/content/slider/mobile/cat-skinny-mobile@1x.png" srcset="img/content/slider/mobile/cat-skinny-mobile@2x.png 2x" alt="Вид вашего кота после." width="280" height="232">
-            </picture>
+            {% set slider_images = [{
+              'alt': 'Вид вашего кота до.',
+              'modifier': 'slider__image--before',
+              'images': [{
+                'image_mobile': 'cat-fat-mobile@1x',
+                'image_mobile2x': 'cat-fat-mobile@2x',
+                'image_tablet': 'cat-fat-tablet@1x',
+                'image_tablet2x': 'cat-fat-tablet@2x'
+              }]
+            }, {
+              'alt': 'Вид вашего кота после.',
+              'modifier': 'slider__image--after',
+              'images': [{
+                'image_mobile': 'cat-skinny-mobile@1x',
+                'image_mobile2x': 'cat-skinny-mobile@2x',
+                'image_tablet': 'cat-skinny-tablet@1x',
+                'image_tablet2x': 'cat-skinny-tablet@2x'
+              }]
+            }] %}
+
+            {% for item in slider_images %}
+              {% for image in item.images %}
+                {{ picture(
+                  path_file='img/content/slider/',
+                  class_name='slider__image ' + item.modifier,
+                  mobile_image=image.image_mobile,
+                  mobile_image2x=image.image_mobile2x,
+                  tablet_image=image.image_tablet,
+                  tablet_image2x=image.image_tablet2x,
+                  width='280',
+                  height='232',
+                  aria_text=item.alt
+                )}}
+              {% endfor %}
+            {% endfor %}
           </div>
 
           <div class="slider__controls">
