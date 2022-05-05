@@ -110,14 +110,14 @@
         {% for link in social_links %}
           <li>
             <a class="social-list__link" href="https://{{ link.url }}" target="_blank">
-              {{ svg('social-list__image', link.svg , link.aria , '28', '22') }}
+              {{ svg('social-list__image', link.svg, link.aria , '28', '22') }}
             </a>
           </li>
         {% endfor %}
       </ul>
 
       <div class="footer__madeby">
-        <a class="footer__madeby-link" href="https://htmlacademy.ru/">
+        <a class="footer__madeby-link" href="https://htmlacademy.ru/intensive/adaptive" target="_blank">
           <span class="footer__madeby-text">HTML Academy</span>
 
           {{ svg('footer__social-icon', 'icon-academy', 'text', '27', '34') }}

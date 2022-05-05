@@ -329,10 +329,14 @@
 
 .form__radio {
   @include radio;
+
+  order: -1;
 }
 
 .form__checkbox {
   @include checkbox;
+
+  order: -1;
 }
 
 .form__textarea {
