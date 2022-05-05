@@ -15,19 +15,24 @@
   ) %}
 
 <picture>
-  {% set adaptive = [{
-    'min_width': '1440',
-    'name_image': desktop_image,
-    'name_image2x': desktop_image2x,
-    'webp': desktop_webp,
-    'webp2x': desktop_webp2x
-  }, {
-    'min_width': '768',
-    'name_image': tablet_image,
-    'name_image2x': tablet_image2x,
-    'webp': tablet_webp,
-    'webp2x': tablet_webp2x
-  }] %}
+
+  {% if desktop_image %}
+    {% set adaptive = [{
+      'min_width': '1440',
+      'name_image': desktop_image,
+      'name_image2x': desktop_image2x
+    }, {
+      'min_width': '768',
+      'name_image': tablet_image,
+      'name_image2x': tablet_image2x
+    }] %}
+  {% else %}
+    {% set adaptive = [{
+      'min_width': '768',
+      'name_image': tablet_image,
+      'name_image2x': tablet_image2x
+    }] %}
+  {% endif %}
 
 
   {% for image in adaptive %}
@@ -41,7 +46,6 @@
 
 </picture>
 {% endmacro %}
-
 
 {% macro source(min_width, name_image, name_image2x, type, webp, path_file ) %}
   {% if webp %}
