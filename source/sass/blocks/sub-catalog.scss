@@ -1,6 +1,7 @@
 .sub-catalog {
   @include media-min(xl) {
     display: grid;
+    align-items: start;
 
     column-gap: 6.5%;
 
@@ -11,6 +12,8 @@
 .sub-catalog__title {
   @include sub-title;
 
+  width: max-content;
+
   grid-column: 1/-1;
 
   @include media-min(md) {
@@ -20,14 +23,58 @@
   @include media-min(xl) {
     padding-left: 0;
   }
+
+  &::before,
+  &::after {
+    top: 16px;
+
+    @include media-min(md) {
+      top: 24px;
+      margin-left: 35px;
+    }
+
+    @include media-min(xl) {
+      top: 27px;
+    }
+  }
 }
 
 .sub-catalog__list {
-  grid-column: 1/4;
+  display: grid;
+  margin-top: 30px;
+  margin-bottom: 35px;
+  row-gap: 1px;
+
+  @include media-min(md) {
+    margin-top: 75px;
+    margin-bottom: 65px;
+
+    border-right: 1px solid var(--grey-3);
+    border-left: 1px solid var(--grey-3);
+  }
+
+  @include media-min(xl) {
+    margin-top: 45px;
+    margin-bottom: 83px;
+
+    border: none;
+
+    grid-column: 1/4;
+  }
 }
 
 .sub-catalog__banner {
+  margin-bottom: 35px;
+
+  @include media-min(md) {
+    grid-column: 4/5;
+
+    margin-bottom: 75px;
+  }
+
   @include media-min(xl) {
     grid-column: 4/5;
+
+    margin: 45px 0 0;
   }
 }

@@ -4,131 +4,151 @@
 
 {% block content %}
   <div class="container">
-    <form class="form" action="https://echo.htmlacademy.ru" method="GET">
-      <h1 class="form__title">Подбор программы</h1>
+<form class="form" action="https://echo.htmlacademy.ru" method="GET">
+  {% set form__list = [{
+    'title': 'Подбор программы',
+    'lead_text': 'Заполните анкету, и мы подберем программу питания для вашего кота',
+    'fieldset': [{
+      'title': 'Личные данные (кота)',
+      'hidden': true,
+      'modifier': 'cats',
+      'inputs': [{
+        'title': 'Имя:*',
+        'type': 'text',
+        'name': 'name',
+        'value': 'Барсик',
+        'class': 'text'
+      }, {
+        'title': 'Вес&nbsp;(кг):*',
+        'type': 'number',
+        'name': 'weight',
+        'value': '7',
+        'class': 'text'
+      }, {
+        'title': 'Возраст&nbsp;(лет):',
+        'type': 'number',
+        'name': 'age',
+        'value': '7',
+        'class': 'text'
+      }]
+    }, {
+      'title': 'Цель',
+      'hidden': true,
+      'modifier': 'target',
+      'label': 'radio',
+      'inputs': [{
+        'title': 'Похудение',
+        'type': 'radio',
+        'name': 'target',
+        'value': 'Похудеть',
+        'class': 'radio',
+        'checked': true
+      }, {
+        'title': 'Набор массы',
+        'type': 'radio',
+        'name': 'target',
+        'value': 'Набрать вес',
+        'class': 'radio'
+      }, {
+        'title': 'Не знаю (Нужен ваш совет)',
+        'type': 'radio',
+        'name': 'target',
+        'value': 'Нужен совет',
+        'class': 'radio'
+      }]
+    }, {
+      'title': 'Контактные&nbsp;данные (владельца&nbsp;кота)',
+      'modifier': 'user',
+      'inputs': [{
+        'title': 'E-mail:*',
+        'type': 'email',
+        'name': 'e-mail',
+        'value': 'kuklachev@gmail.com',
+        'class': 'text',
+        'icon': true
+      }, {
+        'title': 'Телефон:*',
+        'type': 'tel',
+        'name': 'telephone',
+        'value': '8 (960) 900-60-90',
+        'class': 'text',
+        'icon': true
+      }]
+    }, {
+      'title': 'Комментарий',
+      'modifier': 'review',
+      'textarea': [{
+        'value': 'Расскажите обо всех повадкха кота',
+        'name': 'review'
+      }]
+    }, {
+      'title': 'Дополнительно',
+      'modifier': 'additional',
+      'label': 'checkbox',
+      'inputs': [{
+        'title': 'Сахарозаменитель',
+        'type': 'checkbox',
+        'name': 'sugar',
+        'value': 'Сахар',
+        'class': 'checkbox',
+        'checked': true
+      }, {
+        'title': 'Питьевая вода',
+        'type': 'checkbox',
+        'name': 'water',
+        'value': 'Вода',
+        'class': 'checkbox'
+      }, {
+        'title': 'Молоко',
+        'type': 'checkbox',
+        'name': 'milk',
+        'value': 'Молоко',
+        'class': 'checkbox'
+      }, {
+        'title': 'Витамины',
+        'type': 'checkbox',
+        'name': 'vitamins',
+        'value': 'Витамины',
+        'class': 'checkbox'
+      }]
+    }]
+  }] %}
 
-      <p class="form__lead">
-        Заполните анкету, и мы подберем
-        программу питания для вашего кота
-      </p>
+  {% for form in form__list %}
+    <h1 class="form__title">{{ form.title}}</h1>
 
-      <!-- Личные данные кота -->
-      <fieldset class="form__fieldset form__fieldset--cats">
-        <h2 class="visually-hidden">Личные данные (кота)</h2>
+    <p class="form__text-lead">{{ form.lead_text }}</p>
 
-        {% set cat_info = [{
-          'title':  'Имя:*',
-          'type':  'text',
-          'name':  'name',
-          'value':  'Барсик'
-        }, {
-          'title':  'Вес&nbsp;(кг):*',
-          'type':  'number',
-          'name':  'weight',
-          'value':  '7'
-        }, {
-          'title':  'Возраст&nbsp;(лет):',
-          'type':  'number',
-          'name':  'age',
-          'value':  '7'
-        }] %}
+    {% for fieldset in form.fieldset %}
+      <fieldset class="form__fieldset form__fieldset--{{ fieldset.modifier }}">
+        <h2 class="{% if fieldset.hidden %} visually-hidden {% else %} form__sub-title {% endif %}">{{ fieldset.title | safe }}</h2>
 
-        {% for item in cat_info %}
-          <label class="form__label" for="{{ item.name }}-selection">
-            <span class="form__sign">{{ item.title | safe }}</span>
-            <input class="form__text" type="{{ item.type }}" name="{{ item.name }}" id="{{ item.name }}-selection" value="{{ item.value }}">
-          </label>
-        {% endfor %}
+        <div class="form__section form__section--{{ fieldset.modifier }}">
+          {% for input in fieldset.inputs %}
+            <label class="{% if fieldset.label %} form__label form__label--{{ fieldset.label }} {% else %} form__label {% endif %}">
+              <span class="form__sign">{{ input.title | safe }}</span>
+              <input class="form__{{ input.class }}" type="{{ input.type }}" name="{{ input.name }}" id="{{ input.name }}-selection" value="{{ input.value }}" {{ 'checked' if input.checked }}>
+              {% if input.icon %} <span class="form__input-icon form__input-icon--{{ input.type }}"></span> {% endif %}
+            </label>
+          {% endfor %}
+
+
+          {% if fieldset.textarea %}
+            {% for textarea in fieldset.textarea %}
+              <textarea class="form__textarea" name="{{ textarea.name }}" id="{{ textarea.name }}-selection"> {{ textarea.value }} </textarea>
+            {% endfor %}
+          {% endif %}
+        </div>
+
       </fieldset>
+    {% endfor %}
+  {% endfor %}
 
-      <!-- Цель кота -->
-      <fieldset class="form__fieldset form__fieldset--target">
-        <h2 class="visually-hidden">Цель</h2>
+  <div class="form__footer">
+    <button class="form__button button" type="submit">Отправить заявку</button>
+    <span class="form__reminder">* — Обязательные поля</span>
+  </div>
 
-        {% set tasks = [{
-          'title':  'Похудение',
-          'name':  'lose-weight',
-          'checked':  true
-        }, {
-          'title':  'Набор массы',
-          'name':  'weight-gain'
-        }, {
-          'title':  'Не знаю (Нужен ваш совет)',
-          'name':  'not-know'
-        }] %}
-
-        {% for task in tasks %}
-          <label class="form__label form__label--radio" for="{{ task.name }}-selection">
-            <input class="form__radio" type="radio" name="target" id="{{ task.name }}-selection" value="{{ task.name }}" {{ 'checked' if task.checked }}>
-            <span class="form__sign">{{ task.title }}</span>
-          </label>
-        {% endfor %}
-      </fieldset>
-
-      <!-- Контактные данные владельца -->
-      <fieldset class="form__fieldset form__fieldset--user">
-        <h2 class="form__sub-title">Контактные данные (владельца кота)</h2>
-
-        {% set contacts = [{
-          'title':  'E-mail:*',
-          'type':  'email',
-          'name':  'email',
-          'value':  'kuklachev@gmail.com'
-        }, {
-          'title':  'Телефон:*',
-          'type':  'tel',
-          'name':  'telephone',
-          'value':  '8 (960) 900-60-90'
-        }] %}
-
-        {% for contact in contacts %}
-          <label class="form__label" for="{{ contact.name }}-selection">
-            <span class="form__sign">{{ contact.title }}</span>
-            <input class="form__text" type="{{ contact.type }}" name="{{ contact.name }}" id="{{ contact.name }}-selection" value="{{ contact.value }}" required>
-            <span class="form__input-icon form__input-icon--{{ contact.type }}"></span>
-          </label>
-        {% endfor %}
-      </fieldset>
-
-      <!-- Комментарий владельца -->
-      <fieldset class="form__fieldset form__fieldset--review">
-        <h2 class="form__sub-title">Комментарий</h2>
-
-        <textarea class="form__textarea" name="review" id="review-selection">Расскажите обо всех повадкха кота</textarea>
-      </fieldset>
-
-      <!-- Дополнительные услуги -->
-      <fieldset class="form__fieldset form__fieldset--additional">
-        <h2 class="form__sub-title">Дополнительно</h2>
-
-        {% set additionals = [{
-          'title':  'Сахарозаменитель',
-          'name':  'sugar',
-          'checked':  true
-        }, {
-          'title':  'Питьевая вода',
-          'name':  'water'
-        }, {
-          'title':  'Молоко',
-          'name':  'milk'
-        }, {
-          'title':  'Витамины',
-          'name':  'vitamins'
-        }] %}
-
-        {% for addition in additionals %}
-          <label class="form__label form__label--checkbox" for="{{ addition.name }}-selection">
-            <input class="form__checkbox" type="checkbox" name="{{ addition.name }}" id="{{ addition.name }}-selection" {{ 'checked' if addition.checked }}>
-            <span class="form__sign">{{ addition.title }}</span>
-          </label>
-        {% endfor %}
-      </fieldset>
-
-      <!-- Отправка формы -->
-      <div class="form__footer">
-        <button class="form__button button" type="submit">Отправить заявку</button>
-        <span class="form__reminder">* — Обязательные поля</span>
-      </div>
-    </form>
+</form>
   </div>
 {% endblock %}

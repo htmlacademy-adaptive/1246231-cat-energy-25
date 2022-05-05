@@ -36,7 +36,13 @@
 
 .header__site-navigation {
   @include media-min(md) {
+    flex-wrap: wrap;
+    max-width: 70%;
     margin: 8px -10px 0 0;
+  }
+
+  @include media-min(xl) {
+    max-width: 50%;
   }
 }
 

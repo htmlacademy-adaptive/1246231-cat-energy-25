@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Кэт энерджи: каталог</title>
   <link rel="stylesheet" href="css/style.min.css">
   <link rel="icon" href="favicon.ico">
@@ -22,52 +22,31 @@
         <img class="header__logo-img" src="img/interface/logo/logo-mobile.svg" width="191" height="38" alt="Логотип Кэт Энерджи.">
       </picture>
     </a>
-
-    <ul class="header__site-navigation  site-navigation site-navigation--no-js" >
-      
-
-      
-        
-          <li class="site-navigation__item">
-            <a class="site-navigation__link" href="index.html">Главная</a>
-          </li>
-        
-      
-        
-          <li class="site-navigation__item">
-            <a class="site-navigation__link site-navigation__link--current" href="catalog.html">Каталог продукции</a>
-          </li>
-        
-      
-        
-          <li class="site-navigation__item">
-            <a class="site-navigation__link" href="form.html">Подбор программы</a>
-          </li>
-        
-      
+    <ul class="header__site-navigation site-navigation site-navigation--no-js">
+      <li class="site-navigation__item">
+        <a class="site-navigation__link" href="index.html">Главная</a>
+      </li>
+      <li class="site-navigation__item">
+        <a class="site-navigation__link site-navigation__link--current" href="catalog.html">Каталог продукции</a>
+      </li>
+      <li class="site-navigation__item">
+        <a class="site-navigation__link" href="form.html">Подбор программы</a>
+      </li>
     </ul>
-
     <button class="header__hamburger header__hamburger--no-js" type="button">
       <span class="header__hamburger-inner"></span>
     </button>
   </header>
-
-  <main class="main">
-
-    
-  <div class="container">
-    <section class="catalog">
-      <h1 class="page__title">Каталог продукции</h1>
-
-      <div class="catalog__list">
-        
-
-        
+  <main class="main main--inner">
+    <div class="container">
+      <section class="catalog">
+        <h1 class="catalog__title">Каталог продукции</h1>
+        <div class="catalog__list">
           <article class="product-item">
-            <picture class="product-item__picture">
-              <source media="(min-width: 1440px)" srcset="img/content/catalog/desktop/chicken-500-desktop@1x.png 1x, img/content/catalog/desktop/chicken-500-desktop@2x.png 2x">
-              <source media="(min-width: 768px)" srcset="img/content/catalog/tablet/chicken-500-tablet@1x.png 1x, img/content/catalog/tablet/chicken-500-tablet@2x.png 2x">
-              <img class="product-item__image" src="img/content/catalog/mobile/chicken-500-mobile@1x.png" srcset="img/content/catalog/mobile/chicken-500-mobile@2x.png 2x" alt="" width="84" height="112">
+            <picture>
+              <source type="image/png" media="(min-width: 1440px)" srcset="img/content/catalog/chicken-500-desktop@1x.png, img/content/catalog/chicken-500-desktop@2x.png 2x">
+              <source type="image/png" media="(min-width: 768px)" srcset="img/content/catalog/chicken-500-tablet@1x.png, img/content/catalog/chicken-500-tablet@2x.png 2x">
+              <img class="product-item__image" src="img/content/catalog/chicken-500-mobile@1x.png" srcset="img/content/catalog/chicken-500-mobile@2x.png 2x" width="172" height="196" alt="">
             </picture>
             <h3 class="product-item__title">Cat Energy PRO 500&nbsp;г</h3>
             <dl class="product-item__description">
@@ -86,12 +65,11 @@
             </dl>
             <a class="product-item__button button" href="#">Заказать</a>
           </article>
-        
           <article class="product-item">
-            <picture class="product-item__picture">
-              <source media="(min-width: 1440px)" srcset="img/content/catalog/desktop/chicken-1000-desktop@1x.png 1x, img/content/catalog/desktop/chicken-1000-desktop@2x.png 2x">
-              <source media="(min-width: 768px)" srcset="img/content/catalog/tablet/chicken-1000-tablet@1x.png 1x, img/content/catalog/tablet/chicken-1000-tablet@2x.png 2x">
-              <img class="product-item__image" src="img/content/catalog/mobile/chicken-1000-mobile@1x.png" srcset="img/content/catalog/mobile/chicken-1000-mobile@2x.png 2x" alt="" width="84" height="112">
+            <picture>
+              <source type="image/png" media="(min-width: 1440px)" srcset="img/content/catalog/chicken-1000-desktop@1x.png, img/content/catalog/chicken-1000-desktop@2x.png 2x">
+              <source type="image/png" media="(min-width: 768px)" srcset="img/content/catalog/chicken-1000-tablet@1x.png, img/content/catalog/chicken-1000-tablet@2x.png 2x">
+              <img class="product-item__image" src="img/content/catalog/chicken-1000-mobile@1x.png" srcset="img/content/catalog/chicken-1000-mobile@2x.png 2x" width="172" height="196" alt="">
             </picture>
             <h3 class="product-item__title">Cat Energy PRO 1000&nbsp;г</h3>
             <dl class="product-item__description">
@@ -110,12 +88,11 @@
             </dl>
             <a class="product-item__button button" href="#">Заказать</a>
           </article>
-        
           <article class="product-item">
-            <picture class="product-item__picture">
-              <source media="(min-width: 1440px)" srcset="img/content/catalog/desktop/fish-500-desktop@1x.png 1x, img/content/catalog/desktop/fish-500-desktop@2x.png 2x">
-              <source media="(min-width: 768px)" srcset="img/content/catalog/tablet/fish-500-tablet@1x.png 1x, img/content/catalog/tablet/fish-500-tablet@2x.png 2x">
-              <img class="product-item__image" src="img/content/catalog/mobile/fish-500-mobile@1x.png" srcset="img/content/catalog/mobile/fish-500-mobile@2x.png 2x" alt="" width="84" height="112">
+            <picture>
+              <source type="image/png" media="(min-width: 1440px)" srcset="img/content/catalog/fish-500-desktop@1x.png, img/content/catalog/fish-500-desktop@2x.png 2x">
+              <source type="image/png" media="(min-width: 768px)" srcset="img/content/catalog/fish-500-tablet@1x.png, img/content/catalog/fish-500-tablet@2x.png 2x">
+              <img class="product-item__image" src="img/content/catalog/fish-500-mobile@1x.png" srcset="img/content/catalog/fish-500-mobile@2x.png 2x" width="172" height="196" alt="">
             </picture>
             <h3 class="product-item__title">Cat Energy PRO 500&nbsp;г</h3>
             <dl class="product-item__description">
@@ -134,12 +111,11 @@
             </dl>
             <a class="product-item__button button" href="#">Заказать</a>
           </article>
-        
           <article class="product-item">
-            <picture class="product-item__picture">
-              <source media="(min-width: 1440px)" srcset="img/content/catalog/desktop/fish-1000-desktop@1x.png 1x, img/content/catalog/desktop/fish-1000-desktop@2x.png 2x">
-              <source media="(min-width: 768px)" srcset="img/content/catalog/tablet/fish-1000-tablet@1x.png 1x, img/content/catalog/tablet/fish-1000-tablet@2x.png 2x">
-              <img class="product-item__image" src="img/content/catalog/mobile/fish-1000-mobile@1x.png" srcset="img/content/catalog/mobile/fish-1000-mobile@2x.png 2x" alt="" width="84" height="112">
+            <picture>
+              <source type="image/png" media="(min-width: 1440px)" srcset="img/content/catalog/fish-1000-desktop@1x.png, img/content/catalog/fish-1000-desktop@2x.png 2x">
+              <source type="image/png" media="(min-width: 768px)" srcset="img/content/catalog/fish-1000-tablet@1x.png, img/content/catalog/fish-1000-tablet@2x.png 2x">
+              <img class="product-item__image" src="img/content/catalog/fish-1000-mobile@1x.png" srcset="img/content/catalog/fish-1000-mobile@2x.png 2x" width="172" height="196" alt="">
             </picture>
             <h3 class="product-item__title">Cat Energy PRO 1000&nbsp;г</h3>
             <dl class="product-item__description">
@@ -158,12 +134,11 @@
             </dl>
             <a class="product-item__button button" href="#">Заказать</a>
           </article>
-        
           <article class="product-item">
-            <picture class="product-item__picture">
-              <source media="(min-width: 1440px)" srcset="img/content/catalog/desktop/buckwheat-500-desktop@1x.png 1x, img/content/catalog/desktop/buckwheat-500-desktop@2x.png 2x">
-              <source media="(min-width: 768px)" srcset="img/content/catalog/tablet/buckwheat-500-tablet@1x.png 1x, img/content/catalog/tablet/buckwheat-500-tablet@2x.png 2x">
-              <img class="product-item__image" src="img/content/catalog/mobile/buckwheat-500-mobile@1x.png" srcset="img/content/catalog/mobile/buckwheat-500-mobile@2x.png 2x" alt="" width="84" height="112">
+            <picture>
+              <source type="image/png" media="(min-width: 1440px)" srcset="img/content/catalog/buckwheat-500-desktop@1x.png, img/content/catalog/buckwheat-500-desktop@2x.png 2x">
+              <source type="image/png" media="(min-width: 768px)" srcset="img/content/catalog/buckwheat-500-tablet@1x.png, img/content/catalog/buckwheat-500-tablet@2x.png 2x">
+              <img class="product-item__image" src="img/content/catalog/buckwheat-500-mobile@1x.png" srcset="img/content/catalog/buckwheat-500-mobile@2x.png 2x" width="172" height="196" alt="">
             </picture>
             <h3 class="product-item__title">Cat Energy SLIM 500&nbsp;г</h3>
             <dl class="product-item__description">
@@ -182,12 +157,11 @@
             </dl>
             <a class="product-item__button button" href="#">Заказать</a>
           </article>
-        
           <article class="product-item">
-            <picture class="product-item__picture">
-              <source media="(min-width: 1440px)" srcset="img/content/catalog/desktop/buckwheat-1000-desktop@1x.png 1x, img/content/catalog/desktop/buckwheat-1000-desktop@2x.png 2x">
-              <source media="(min-width: 768px)" srcset="img/content/catalog/tablet/buckwheat-1000-tablet@1x.png 1x, img/content/catalog/tablet/buckwheat-1000-tablet@2x.png 2x">
-              <img class="product-item__image" src="img/content/catalog/mobile/buckwheat-1000-mobile@1x.png" srcset="img/content/catalog/mobile/buckwheat-1000-mobile@2x.png 2x" alt="" width="84" height="112">
+            <picture>
+              <source type="image/png" media="(min-width: 1440px)" srcset="img/content/catalog/buckwheat-1000-desktop@1x.png, img/content/catalog/buckwheat-1000-desktop@2x.png 2x">
+              <source type="image/png" media="(min-width: 768px)" srcset="img/content/catalog/buckwheat-1000-tablet@1x.png, img/content/catalog/buckwheat-1000-tablet@2x.png 2x">
+              <img class="product-item__image" src="img/content/catalog/buckwheat-1000-mobile@1x.png" srcset="img/content/catalog/buckwheat-1000-mobile@2x.png 2x" width="172" height="196" alt="">
             </picture>
             <h3 class="product-item__title">Cat Energy SLIM 1000&nbsp;г</h3>
             <dl class="product-item__description">
@@ -206,12 +180,11 @@
             </dl>
             <a class="product-item__button button" href="#">Заказать</a>
           </article>
-        
           <article class="product-item">
-            <picture class="product-item__picture">
-              <source media="(min-width: 1440px)" srcset="img/content/catalog/desktop/rice-500-desktop@1x.png 1x, img/content/catalog/desktop/rice-500-desktop@2x.png 2x">
-              <source media="(min-width: 768px)" srcset="img/content/catalog/tablet/rice-500-tablet@1x.png 1x, img/content/catalog/tablet/rice-500-tablet@2x.png 2x">
-              <img class="product-item__image" src="img/content/catalog/mobile/rice-500-mobile@1x.png" srcset="img/content/catalog/mobile/rice-500-mobile@2x.png 2x" alt="" width="84" height="112">
+            <picture>
+              <source type="image/png" media="(min-width: 1440px)" srcset="img/content/catalog/rice-500-desktop@1x.png, img/content/catalog/rice-500-desktop@2x.png 2x">
+              <source type="image/png" media="(min-width: 768px)" srcset="img/content/catalog/rice-500-tablet@1x.png, img/content/catalog/rice-500-tablet@2x.png 2x">
+              <img class="product-item__image" src="img/content/catalog/rice-500-mobile@1x.png" srcset="img/content/catalog/rice-500-mobile@2x.png 2x" width="172" height="196" alt="">
             </picture>
             <h3 class="product-item__title">Cat Energy SLIM 500&nbsp;г</h3>
             <dl class="product-item__description">
@@ -230,24 +203,18 @@
             </dl>
             <a class="product-item__button button" href="#">Заказать</a>
           </article>
-        
-
-        <a class="catalog__show-more" href="#">
-          <span class="catalog__show-icon"></span>
-          <h3 class="catalog__title">Показать еще 100500 товаров</h3>
-          <span class="catalog__text">На самом деле вкусов гораздо больше!</span>
-          <span class="catalog__button button">Показать все</span>
-        </a>
-      </div>
-    </section>
-
-    <section class="sub-catalog">
-      <h2 class="sub-catalog__title">Дополнительные товары</h2>
-
-      <div class="sub-catalog__list">
-        
-
-        
+          <div class="catalog__item">
+            <a class="catalog__show-more" href="#">
+              <h3 class="catalog__item-title">Показать еще 100500 товаров</h3>
+              <span class="catalog__text">На самом деле вкусов гораздо больше!</span>
+              <span class="catalog__button button">Показать все</span>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="sub-catalog">
+        <h2 class="sub-catalog__title">Дополнительные товары</h2>
+        <div class="sub-catalog__list">
           <article class="additional-item">
             <h3 class="additional-item__title">Сахарозаменитель</h3>
             <dl class="additional-item__description">
@@ -256,7 +223,6 @@
             </dl>
             <a class="additional-item__button button" href="#">Заказать</a>
           </article>
-        
           <article class="additional-item">
             <h3 class="additional-item__title">Питьевая вода</h3>
             <dl class="additional-item__description">
@@ -265,7 +231,6 @@
             </dl>
             <a class="additional-item__button button" href="#">Заказать</a>
           </article>
-        
           <article class="additional-item">
             <h3 class="additional-item__title">Молоко</h3>
             <dl class="additional-item__description">
@@ -274,7 +239,6 @@
             </dl>
             <a class="additional-item__button button" href="#">Заказать</a>
           </article>
-        
           <article class="additional-item">
             <h3 class="additional-item__title">Витамины</h3>
             <dl class="additional-item__description">
@@ -283,84 +247,58 @@
             </dl>
             <a class="additional-item__button button" href="#">Заказать</a>
           </article>
-        
-      </div>
-
-      <aside class="sub-catalog__banner banner">
-        <p class="banner__text">
-          Закажите все
-          и&nbsp;получите&nbsp;чехол&nbsp;для
-          кота в подарок!
-        </p>
-      </aside>
-    </section>
-  </div>
-
-
-    <section class="address  address--background">
+        </div>
+        <aside class="sub-catalog__banner banner">
+          <p class="banner__text">Закажите все и&nbsp;получите&nbsp;чехол&nbsp;для кота в подарок!</p>
+        </aside>
+      </section>
+    </div>
+    <section class="address address--background">
       <div class="container">
         <div class="address__inner">
-          <h2 class="address__title">
-            Приглашаем
-            к&#160;сотрудничеству
-            дилеров!
-          </h2>
-
-          <address class="address__text">
-            ул. Большая
-            Конюшенная,&#160;д.&#160;19/8
-            <span class="address__text-city">Санкт-Петербург</span>
+          <h2 class="address__title">Приглашаем к&#160;сотрудничеству дилеров!</h2>
+          <address class="address__text">ул. Большая Конюшенная,&#160;д.&#160;19/8 <span class="address__text-city">Санкт-Петербург</span>
           </address>
         </div>
       </div>
-
       <div class="address__map-wrapper">
         <iframe class="address__map" src="https://yandex.ru/map-widget/v1/?um=constructor%3A8dbeb7703bacea9fdbb1d24ddc1edc3a51722ed30029556e1ae3a5ff08043578&amp;source=constructor"></iframe>
       </div>
     </section>
   </main>
-
   <footer class="footer">
     <div class="footer__inner container">
       <a class="footer__logo logo" href="#">
         <img src="img/interface/logo/logo-single.svg" alt="Логотип Кэт Энерджи." width="128" height="24">
       </a>
-
       <ul class="footer__social-list social-list">
-        
-
-        
-          <li>
-            <a class="social-list__link" href="https://vk.com/htmlacademy" target="_blank">
-              <svg class="social-list__image" aria-label="Мы в вконтакте." width="28" height="22">
-                <use xlink:href="img/sprite.svg#icon-vk"></use>
-              </svg>
-            </a>
-          </li>
-        
-          <li>
-            <a class="social-list__link" href="https://www.youtube.com/c/HTMLAcademyRUS/" target="_blank">
-              <svg class="social-list__image" aria-label="Мы в ютубе." width="28" height="22">
-                <use xlink:href="img/sprite.svg#icon-you"></use>
-              </svg>
-            </a>
-          </li>
-        
-          <li>
-            <a class="social-list__link" href="https://t.me/htmlacademy" target="_blank">
-              <svg class="social-list__image" aria-label="Мы в телеграме." width="28" height="22">
-                <use xlink:href="img/sprite.svg#icon-tg"></use>
-              </svg>
-            </a>
-          </li>
-        
+        <li>
+          <a class="social-list__link" href="https://vk.com/htmlacademy" target="_blank">
+            <svg class="social-list__image" aria-label="Мы в вконтакте." width="28" height="22">
+              <use xlink:href="../../img/sprite.svg#icon-vk"></use>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a class="social-list__link" href="https://www.youtube.com/c/HTMLAcademyRUS/" target="_blank">
+            <svg class="social-list__image" aria-label="Мы в ютубе." width="28" height="22">
+              <use xlink:href="../../img/sprite.svg#icon-you"></use>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a class="social-list__link" href="https://t.me/htmlacademy" target="_blank">
+            <svg class="social-list__image" aria-label="Мы в телеграме." width="28" height="22">
+              <use xlink:href="../../img/sprite.svg#icon-tg"></use>
+            </svg>
+          </a>
+        </li>
       </ul>
-
       <div class="footer__madeby">
-        <a class="footer__madeby-link" href="https://htmlacademy.ru/">
+        <a class="footer__madeby-link" href="https://htmlacademy.ru/intensive/adaptive" target="_blank">
           <span class="footer__madeby-text">HTML Academy</span>
-          <svg class="social-list__image" aria-label="Логотип HTML Academy." width="27" height="34">
-            <use xlink:href="img/sprite.svg#icon-academy"></use>
+          <svg class="footer__social-icon" aria-label="text" width="27" height="34">
+            <use xlink:href="../../img/sprite.svg#icon-academy"></use>
           </svg>
         </a>
       </div>
@@ -368,7 +306,6 @@
   </footer>
   <script src="js/header-menu.js"></script>
   <script src="js/no-script.js"></script>
-  <script src="js/slider.js"></script>
 </body>
 
 </html>

@@ -36,7 +36,7 @@
 
     width: 200vw;
     height: 1px;
-    background-color: #ebebeb;
+    background-color: var(--grey-7);
     transform: translateX(-50%);
   }
 }
@@ -73,16 +73,11 @@
 
 .product-item__picture {
   grid-row: 1/3;
+
   justify-self: center;
 
   @include media-min(md) {
-    margin-bottom: 33px;
-
     grid-row: unset;
-  }
-
-  @include media-min(xl) {
-    margin-bottom: 46px;
   }
 }
 
@@ -92,6 +87,7 @@
   @include media-min(md) {
     width: 168px;
     height: 200px;
+    margin-bottom: 34px;
 
     object-position: bottom;
   }
@@ -99,6 +95,7 @@
   @include media-min(xl) {
     width: 172px;
     height: 196px;
+    margin-bottom: 45px;
   }
 }
 
@@ -108,30 +105,29 @@
   font-family: "Arial", sans-serif;
 
   @include media-min(md) {
-    margin-bottom: 27px;
+    margin-bottom: 26px;
   }
 
   @include media-min(xl) {
     padding: 0 2px 0 5px;
-    margin-bottom: 27px;
   }
 }
 
 .product-item__description-row {
   display: flex;
   justify-content: space-between;
-
-  @include media-min(md) {
-    margin-bottom: 8px;
-    padding-bottom: 6px;
-
-    border-bottom: 1px solid var(--grey-3);
-  }
+  align-items: center;
 
   @include media-min(md) {
     margin-bottom: 7px;
     padding-bottom: 8px;
+
+    border-bottom: 1px solid var(--grey-3);
   }
+}
+
+.product-item__definition {
+  flex-basis: 60%;
 }
 
 .product-item__value {
@@ -145,4 +141,8 @@
   line-height: 20px;
 
   grid-column: 1/-1;
+
+  @include media-min(md) {
+    align-self: end;
+  }
 }

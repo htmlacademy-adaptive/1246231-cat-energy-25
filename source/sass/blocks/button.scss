@@ -1,9 +1,9 @@
 .button {
-  padding: 10px 0;
+  padding: 10px;
 
   font-weight: 400;
   font-size: 16px;
-  line-height: 20px;
+  line-height: 1.25em;
   font-family: "Oswald", "Arial", sans-serif;
   text-align: center;
   color: var(--white);
@@ -15,11 +15,9 @@
   cursor: pointer;
 
   @include media-min(md) {
-    padding-top: 16px;
-    padding-bottom: 16px;
+    padding: 15px;
 
     font-size: 20px;
-    line-height: 20px;
   }
 }
 
