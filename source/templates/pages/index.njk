@@ -25,7 +25,7 @@
           height='270'
         )}}
 
-        <a class="intro__button button" href="#">Подобрать программу</a>
+        <a class="intro__button button" href="form.html">Подобрать программу</a>
       </p>
     </div>
   </section>
@@ -50,7 +50,7 @@
         <article class="popular-category__item popular-category__item--{{ category.alias }}">
           <h3 class="popular-category__title">{{ category.title }}</h3>
           <p class="popular-category__text">{{ category.desctiption }}</p>
-          <a class="popular-category__button" href="#">Каталог {{ category.alias }}</a>
+          <a class="popular-category__button" href="catalog.html">Каталог {{ category.alias }}</a>
         </article>
       {% endfor %}
     </section>
@@ -161,7 +161,7 @@
             <button class="slider__button" type="button">
               Было
             </button>
-            <input class="slider__range-buton" type="range" oninput="changeSliderValue()" type="range">
+            <input class="slider__range-buton" type="range" oninput="changeSliderValue()">
             <div class="slider__radio-switching">
               <input class="slider__radio-buton" type="radio" name="switch" checked>
               <input class="slider__radio-buton" type="radio" name="switch">
