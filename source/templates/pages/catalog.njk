@@ -103,20 +103,23 @@
 
         {% for product in product_list %}
         <article class="product-item">
-          {% for image in product.images %}
-            {{ picture(
-              path_file='img/content/catalog/',
-              class_name='product-item__image',
-              mobile_image=image.image_mobile,
-              mobile_image2x=image.image_mobile2x,
-              tablet_image=image.image_tablet,
-              tablet_image2x=image.image_tablet2x,
-              desktop_image=image.image_desktop,
-              desktop_image2x=image.image_desktop2x,
-              width='172',
-              height='196'
-            ) }}
-          {% endfor %}
+          <a href="#">
+            {% for image in product.images %}
+              {{ picture(
+                path_file='img/content/catalog/',
+                class_name='product-item__image',
+                mobile_image=image.image_mobile,
+                mobile_image2x=image.image_mobile2x,
+                tablet_image=image.image_tablet,
+                tablet_image2x=image.image_tablet2x,
+                desktop_image=image.image_desktop,
+                desktop_image2x=image.image_desktop2x,
+                width='172',
+                height='196',
+                webp='true'
+              ) }}
+            {% endfor %}
+          </a>
           <h3 class="product-item__title">{{ product.title | safe }}</h3>
           <dl class="product-item__description">
             <div class="product-item__description-row">

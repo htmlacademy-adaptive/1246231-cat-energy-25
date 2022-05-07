@@ -14,22 +14,27 @@
       'modifier': 'cats',
       'inputs': [{
         'title': 'Имя:*',
+        'class': 'text',
         'type': 'text',
         'name': 'name',
-        'value': 'Барсик',
-        'class': 'text'
+        'id': 'name',
+        'placeholder': 'Барсик',
+        'required': true
       }, {
         'title': 'Вес&nbsp;(кг):*',
+        'class': 'text',
         'type': 'number',
         'name': 'weight',
-        'value': '7',
-        'class': 'text'
+        'id': 'weight',
+        'placeholder': '7',
+        'required': true
       }, {
         'title': 'Возраст&nbsp;(лет):',
+        'class': 'text',
         'type': 'number',
         'name': 'age',
-        'value': '7',
-        'class': 'text'
+        'id': 'age',
+        'placeholder': '7'
       }]
     }, {
       'title': 'Цель',
@@ -38,48 +43,56 @@
       'label': 'radio',
       'inputs': [{
         'title': 'Похудение',
+        'class': 'radio',
         'type': 'radio',
         'name': 'target',
         'value': 'Похудеть',
-        'class': 'radio',
+        'id': 'lose-weight',
         'checked': true
       }, {
         'title': 'Набор массы',
+        'class': 'radio',
         'type': 'radio',
         'name': 'target',
         'value': 'Набрать вес',
-        'class': 'radio'
+        'id': 'mass-gain'
       }, {
         'title': 'Не знаю (Нужен ваш совет)',
+        'class': 'radio',
         'type': 'radio',
         'name': 'target',
         'value': 'Нужен совет',
-        'class': 'radio'
+        'id': 'dont-know'
       }]
     }, {
       'title': 'Контактные&nbsp;данные (владельца&nbsp;кота)',
       'modifier': 'user',
       'inputs': [{
         'title': 'E-mail:*',
+        'class': 'text',
         'type': 'email',
         'name': 'e-mail',
-        'value': 'kuklachev@gmail.com',
-        'class': 'text',
-        'icon': true
+        'id': 'email',
+        'placeholder': 'kuklachev@gmail.com',
+        'icon': true,
+        'required': true
       }, {
         'title': 'Телефон:*',
+        'class': 'text',
         'type': 'tel',
         'name': 'telephone',
-        'value': '8 (960) 900-60-90',
-        'class': 'text',
-        'icon': true
+        'id': 'telephone',
+        'placeholder': '8 (960) 900-60-90',
+        'icon': true,
+        'required': true
       }]
     }, {
       'title': 'Комментарий',
       'modifier': 'review',
       'textarea': [{
-        'value': 'Расскажите обо всех повадкха кота',
-        'name': 'review'
+        'name': 'review',
+        'id': 'review',
+        'placeholder': 'Расскажите обо всех повадках кота'
       }]
     }, {
       'title': 'Дополнительно',
@@ -87,29 +100,33 @@
       'label': 'checkbox',
       'inputs': [{
         'title': 'Сахарозаменитель',
+        'class': 'checkbox',
         'type': 'checkbox',
         'name': 'sugar',
+        'id': 'sugar',
         'value': 'Сахар',
-        'class': 'checkbox',
         'checked': true
       }, {
         'title': 'Питьевая вода',
+        'class': 'checkbox',
         'type': 'checkbox',
         'name': 'water',
-        'value': 'Вода',
-        'class': 'checkbox'
+        'id': 'water',
+        'value': 'Вода'
       }, {
         'title': 'Молоко',
+        'class': 'checkbox',
         'type': 'checkbox',
         'name': 'milk',
-        'value': 'Молоко',
-        'class': 'checkbox'
+        'id': 'milk',
+        'value': 'Молоко'
       }, {
         'title': 'Витамины',
+        'class': 'checkbox',
         'type': 'checkbox',
         'name': 'vitamins',
-        'value': 'Витамины',
-        'class': 'checkbox'
+        'id': 'vitamins',
+        'value': 'Витамины'
       }]
     }]
   }] %}
@@ -127,15 +144,18 @@
           {% for input in fieldset.inputs %}
             <label class="{% if fieldset.label %} form__label form__label--{{ fieldset.label }} {% else %} form__label {% endif %}">
               <span class="form__sign">{{ input.title | safe }}</span>
-              <input class="form__{{ input.class }}" type="{{ input.type }}" name="{{ input.name }}" id="{{ input.name }}-selection" value="{{ input.value }}" {{ 'checked' if input.checked }}>
-              {% if input.icon %} <span class="form__input-icon form__input-icon--{{ input.type }}"></span> {% endif %}
+
+              <input class="form__{{ input.class }}" type="{{ input.type }}" name="{{ input.name }}" id="{{ input.id }}-selection" value="{{ input.value }}" {% if input.placeholder %}placeholder="{{ input.placeholder }}"{% endif %} {{ 'checked' if input.checked }} {{ 'required' if input.required }}>
+
+              {% if input.icon %}
+                <span class="form__input-icon form__input-icon--{{ input.type }}"></span>
+              {% endif %}
             </label>
           {% endfor %}
 
-
           {% if fieldset.textarea %}
             {% for textarea in fieldset.textarea %}
-              <textarea class="form__textarea" name="{{ textarea.name }}" id="{{ textarea.name }}-selection"> {{ textarea.value }} </textarea>
+              <textarea class="form__textarea" name="{{ textarea.name }}" id="{{ textarea.id }}-selection" placeholder="{{ textarea.placeholder }}"></textarea>
             {% endfor %}
           {% endif %}
         </div>
