@@ -222,15 +222,14 @@
 }
 
 .case__slider {
-  max-width: 320px;
+  width: 320px;
   margin: 0 auto;
 
   @include media-min(md) {
-    max-width: 708px;
+    width: 572px;
   }
 
-  @include media-min(md) {
-    max-width: 100%;
+  @include media-min(xl) {
     margin: 0;
   }
 }
