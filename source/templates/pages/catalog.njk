@@ -103,7 +103,7 @@
 
         {% for product in product_list %}
         <article class="product-item">
-          <a class="product-item__image-link" href="#">
+          <a class="product-item__image-link" href="#" aria-label="Заказ продукта.">
             {% for image in product.images %}
               {{ picture(
                 path_file='img/content/catalog/',
