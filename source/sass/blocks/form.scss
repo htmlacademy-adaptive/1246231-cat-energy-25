@@ -287,7 +287,7 @@
     outline-offset: -1px;
   }
 
-  &:required {
+  &:required:invalid {
     outline-color: var(--orange);
   }
 
@@ -328,7 +328,7 @@
   background-color: var(--green);
 }
 
-.form__text:required + .form__input-icon {
+.form__text:required:invalid + .form__input-icon {
   background-color: var(--orange);
 }
 
