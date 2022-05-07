@@ -287,8 +287,13 @@
     outline-offset: -1px;
   }
 
-  &:invalid {
+  &:required {
     outline-color: var(--orange);
+  }
+
+  &::placeholder {
+    color: inherit;
+    opacity: 1;
   }
 
   @include media-min(xl) {
@@ -323,7 +328,7 @@
   background-color: var(--green);
 }
 
-.form__text:invalid + .form__input-icon {
+.form__text:required + .form__input-icon {
   background-color: var(--orange);
 }
 
@@ -354,6 +359,11 @@
   border: 1px solid var(--grey-8);
 
   resize: unset;
+
+  &::placeholder {
+    color: inherit;
+    opacity: 1;
+  }
 
   @include media-min(md) {
     min-height: 174px;
