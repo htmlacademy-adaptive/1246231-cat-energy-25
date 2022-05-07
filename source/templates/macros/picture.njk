@@ -16,24 +16,29 @@
 
 <picture>
 
-  {% if desktop_image %}
-    {% set adaptive = [{
-      'min_width': '1440',
-      'name_image': desktop_image,
-      'name_image2x': desktop_image2x
-    }, {
-      'min_width': '768',
-      'name_image': tablet_image,
-      'name_image2x': tablet_image2x
-    }] %}
-  {% else %}
-    {% set adaptive = [{
-      'min_width': '768',
-      'name_image': tablet_image,
-      'name_image2x': tablet_image2x
-    }] %}
-  {% endif %}
-
+{% if tablet_image and desktop_image %}
+  {% set adaptive = [{
+    'min_width': '1440',
+    'name_image': desktop_image,
+    'name_image2x': desktop_image2x
+  }, {
+    'min_width': '768',
+    'name_image': tablet_image,
+    'name_image2x': tablet_image2x
+  }] %}
+{% elif tablet_image %}
+  {% set adaptive = [{
+    'min_width': '768',
+    'name_image': tablet_image,
+    'name_image2x': tablet_image2x
+  }] %}
+{% elif desktop_image %}
+  {% set adaptive = [{
+    'min_width': '1440',
+    'name_image': tablet_image,
+    'name_image2x': tablet_image2x
+  }] %}
+{% endif %}
 
   {% for image in adaptive %}
     {{source(image.min_width, image.name_image, image.name_image2x, type, webp, path_file ) }}
