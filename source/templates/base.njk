@@ -22,45 +22,46 @@
 
 <body class="page">
   <header class="header header--no-js">
-    <a class="header__logo logo" href="index.html">
-      <picture>
-        <source media="(min-width: 1440px)" srcset="img/interface/logo/logo-desktop.svg">
-        <source media="(min-width: 768px)" srcset="img/interface/logo/logo-tablet.svg">
-        <img class="header__logo-img" src="img/interface/logo/logo-mobile.svg" width="191" height="38" alt="Логотип Кэт Энерджи.">
-      </picture>
-    </a>
+    <div class="header__inner container">
+      <a class="header__logo logo" href="index.html">
+        <picture>
+          <source media="(min-width: 1440px)" srcset="img/interface/logo/logo-desktop.svg">
+          <source media="(min-width: 768px)" srcset="img/interface/logo/logo-tablet.svg">
+          <img class="header__logo-img" src="img/interface/logo/logo-mobile.svg" width="191" height="38" alt="Логотип Кэт Энерджи.">
+        </picture>
 
-    <ul class="header__site-navigation {{ 'site-navigation--index' if  name_page == 'index' }} site-navigation site-navigation--no-js" >
-      {% set nav_links = [{
-        'title':  'Главная',
-        'url':  'index.html',
-        'current':  'index'
-      }, {
-        'title':  'Каталог продукции',
-        'url':  'catalog.html',
-        'current':  'catalog'
-      }, {
-        'title':  'Подбор программы',
-        'url':  'form.html',
-        'current':  'form'
-      }] %}
+      <ul class="header__site-navigation {{ 'site-navigation--index' if  name_page == 'index' }} site-navigation site-navigation--no-js" >
+        {% set nav_links = [{
+          'title':  'Главная',
+          'url':  'index.html',
+          'current':  'index'
+        }, {
+          'title':  'Каталог продукции',
+          'url':  'catalog.html',
+          'current':  'catalog'
+        }, {
+          'title':  'Подбор программы',
+          'url':  'form.html',
+          'current':  'form'
+        }] %}
 
-      {% for link in nav_links %}
-        {% if name_page == link.current %}
-          <li class="site-navigation__item">
-            <a class="site-navigation__link site-navigation__link--current" href="{{ link.url }}">{{ link.title }}</a>
-          </li>
-        {% else %}
-          <li class="site-navigation__item">
-            <a class="site-navigation__link" href="{{ link.url }}">{{ link.title }}</a>
-          </li>
-        {% endif %}
-      {% endfor %}
-    </ul>
+        {% for link in nav_links %}
+          {% if name_page == link.current %}
+            <li class="site-navigation__item">
+              <a class="site-navigation__link site-navigation__link--current" href="{{ link.url }}">{{ link.title }}</a>
+            </li>
+          {% else %}
+            <li class="site-navigation__item">
+              <a class="site-navigation__link" href="{{ link.url }}">{{ link.title }}</a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
 
-    <button class="header__hamburger header__hamburger--no-js" type="button">
-      <span class="header__hamburger-inner"></span>
-    </button>
+      <button class="header__hamburger header__hamburger--no-js" type="button">
+        <span class="header__hamburger-inner"></span>
+      </button>
+    </div>
   </header>
 
   <main class="main {{ 'main--inner' if name_page !== 'index' }}">
