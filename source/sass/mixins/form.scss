@@ -1,4 +1,3 @@
-/* stylelint-disable */
 @mixin radio {
   display: flex;
   width: 30px;
@@ -9,7 +8,7 @@
   border-radius: 50%;
   cursor: pointer;
 
-  -webkit-appearance: none;
+  appearance: none;
 
   @include media-min(md) {
     width: 40px;
@@ -42,6 +41,11 @@
   &:hover {
     border-color: var(--grey-9);
   }
+
+  &:focus {
+    outline: 2px solid var(--grey);
+    outline-offset: -1px;
+  }
 }
 
 @mixin checkbox {
@@ -53,7 +57,7 @@
   border: 1px solid var(--grey-3);
   cursor: pointer;
 
-  -webkit-appearance: none;
+  appearance: none;
 
   @include media-min(md) {
     width: 40px;
@@ -87,5 +91,9 @@
   &:hover {
     border-color: var(--grey-9);
   }
+
+  &:focus {
+    outline: 2px solid var(--grey);
+    outline-offset: -1px;
+  }
 }
-/* stylelint-enable */

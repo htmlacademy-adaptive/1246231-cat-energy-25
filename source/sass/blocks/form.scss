@@ -287,13 +287,13 @@
     outline-offset: -1px;
   }
 
-  &:required:invalid {
-    outline-color: var(--orange);
-  }
-
   &::placeholder {
     color: inherit;
     opacity: 1;
+  }
+
+  &:not(:placeholder-shown):invalid {
+    outline-color: var(--orange);
   }
 
   @include media-min(xl) {
@@ -328,7 +328,7 @@
   background-color: var(--green);
 }
 
-.form__text:required:invalid + .form__input-icon {
+.form__text:not(:placeholder-shown):invalid + .form__input-icon {
   background-color: var(--orange);
 }
 
@@ -359,6 +359,11 @@
   border: 1px solid var(--grey-8);
 
   resize: unset;
+
+  &:focus {
+    outline: 2px solid var(--grey);
+    outline-offset: -1px;
+  }
 
   &::placeholder {
     color: inherit;

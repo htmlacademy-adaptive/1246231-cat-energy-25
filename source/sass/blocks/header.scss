@@ -1,10 +1,5 @@
 .header {
-  display: flex;
-  justify-content: space-between;
-  min-height: 65px;
-  padding: 10px 0 0 0;
-
-  @include container;
+  padding-top: 10px;
 
   @include media-min(md) {
     padding-top: 24px;
@@ -13,6 +8,11 @@
   @include media-min(xl) {
     padding-top: 53px;
   }
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
 }
 
 // класс для мобильного меню, перестраивающий сетку, если нет JS, удаляется им же если он есть
@@ -42,7 +42,7 @@
   }
 
   @include media-min(xl) {
-    max-width: 50%;
+    max-width: 55%;
   }
 }
 

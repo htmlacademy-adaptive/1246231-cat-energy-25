@@ -24,15 +24,17 @@
     padding-left: 0;
   }
 
-  &::before,
-  &::after {
-    top: 16px;
+  &::before {
+    margin: 0;
 
-    @include media-min(md) {
-      top: 24px;
-      margin-left: 35px;
+    @include media-min(xl) {
+      top: 27px;
+
+      margin-right: 40px;
     }
+  }
 
+  &::after {
     @include media-min(xl) {
       top: 27px;
     }
